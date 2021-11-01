@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/merit/static/css/main.a617e044.chunk.css",
+    "main.js": "/merit/static/js/main.dda1eef4.chunk.js",
+    "main.js.map": "/merit/static/js/main.dda1eef4.chunk.js.map",
+    "runtime-main.js": "/merit/static/js/runtime-main.ac1219c0.js",
+    "runtime-main.js.map": "/merit/static/js/runtime-main.ac1219c0.js.map",
+    "static/js/2.703b6119.chunk.js": "/merit/static/js/2.703b6119.chunk.js",
+    "static/js/2.703b6119.chunk.js.map": "/merit/static/js/2.703b6119.chunk.js.map",
+    "static/js/3.4bca5b90.chunk.js": "/merit/static/js/3.4bca5b90.chunk.js",
+    "static/js/3.4bca5b90.chunk.js.map": "/merit/static/js/3.4bca5b90.chunk.js.map",
+    "index.html": "/merit/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/merit/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.703b6119.chunk.js.LICENSE.txt": "/merit/static/js/2.703b6119.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/merit/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac1219c0.js",
+    "static/js/2.703b6119.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.dda1eef4.chunk.js"
+  ]
+}
