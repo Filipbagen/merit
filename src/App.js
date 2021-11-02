@@ -1,8 +1,13 @@
 import './App.css'
+import Schedule from './components/Schedule'
+import CSVReader from 'react-csv-reader'
 
 const App = () => {
   return (
-    <h1>Hello world</h1>
+    <div>
+      <CSVReader onFileLoaded={(data, fileInfo, originalFile) => console.dir(data, fileInfo, originalFile)} />
+
+    </div>
   )
 }
 
