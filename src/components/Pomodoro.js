@@ -3,31 +3,52 @@ import useInterval from "../misc/useInterval";
 import styled from "styled-components";
  
 const AllButts = styled.div`
+	min-height: 100vh;
+	min-width: 100vw;
+
+	font-family: 'Barlow';
+
+	display: flex;
 	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	
 `
 const Drawer = styled.div`
-	background-color: #F6F6F6;
+	background-color: #12293B;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	align-items: center;
+
 	position: absolute;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 100px;
+	height: 150px;
 `
 
 const TimerButts = styled.div`
-	color: white;
-	background-color: #12293B;
-	border: none;
-	border-radius: 10;
-`
-const Butts = styled.div`
+	color: black;
 	display: flex;
-	justify-content: space-around;
-	border-radius: 10;
+	justify-content: center;
+	align-items: center;
+
+	background-color: #F6F6F6;
+	width: 45vw;
+	height: 60px;
+	border-radius: 15px;
+
+	font-size: 24px;
+
 	
-
 `
-
+const Clock = styled.div`
+	font-size: 50px;
+	
+	
+`
 
 // Component
 const Pomodoro = () => {
@@ -52,11 +73,11 @@ const Pomodoro = () => {
 
 	return (
 		<AllButts>
-			{message && <div>Vila</div>}
-			{timerMinutes}:{timerSeconds}
+			<Clock>
+				{message && <div>Vila</div>}
+				{timerMinutes}:{timerSeconds}
+			</Clock>
 			<Drawer>
-			<div>
-				<Butts>
 					<TimerButts onClick={()=>setSeconds(25*60)}>Nollställ</TimerButts>
 
 					<TimerButts onClick={()=>setSeconds(7)}>Ställ in</TimerButts>
@@ -64,8 +85,6 @@ const Pomodoro = () => {
 					<TimerButts onClick={()=>setIsRunning(false)}>Pause</TimerButts>
 					
 					<TimerButts onClick={()=>setIsRunning(true)}>Start</TimerButts>
-				</Butts>
-			</div>
 			</Drawer>
 			
 		</AllButts>
