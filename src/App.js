@@ -2,13 +2,19 @@ import './App.css'
 import Schedule from './components/Schedule'
 import CSVReader from 'react-csv-reader'
 import Pomodoro from './components/Pomodoro'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  min-height: 100vh;
+  display: flex;
+`
 
 const App = () => {
   return (
-    <div>
-      <CSVReader onFileLoaded={(data, fileInfo, originalFile) => console.dir(data, fileInfo, originalFile)} />
+    <Container>
+      
       <Pomodoro/>
-    </div>
+    </Container>
   )
 }
 

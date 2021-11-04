@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import useInterval from "../misc/useInterval";
 import styled from "styled-components";
-import { CgPlayButtonO } from 'react-icons/cg';
-import {CgPlayPauseO} from 'react-icons/cg';
+import { BsPlayCircle } from 'react-icons/bs';
+import {BsPauseCircle} from 'react-icons/bs';
 import {BsArrowRepeat} from 'react-icons/bs';
  
 const AllButts = styled.div`
@@ -16,7 +16,6 @@ const AllButts = styled.div`
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	
 `
 const Drawer = styled.div`
 	background-color: #12293B;
@@ -31,8 +30,6 @@ const Drawer = styled.div`
 	bottom: 0;
 	height: 100px;
 	border-radius: 25px 25px 0px 0px;
-
-	
 `
 
 const TimerButts = styled.div`
@@ -47,20 +44,33 @@ const TimerButts = styled.div`
 	border-radius: 15px;
 
 	font-size: 24px;
-	
+`
+const PlayContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	min-width: 100vw;
+	height: 150px;
+	align-items: center;
+	justify-content: space-evenly;
+`
 
-	
+const Play = styled.div`
+	color: #12293B;
 `
 const Clock = styled.div`
-	font-size: 70px;
+	font-size: 100px;
+	color: black;
 	
 `
+const Text = styled.div`
+	color: black;
+`
 
-const colChange = document.querySelector('.Clock');
 
 // Component
 const Pomodoro = () => {
 
+	var colChange = document.querySelector('.Clock');
 	const [seconds, setSeconds] = useState(25*60);
 	const [message, setDisplayMessage] = useState(false);
 	const [isRunning, setIsRunning]=useState(true);
@@ -78,7 +88,7 @@ const Pomodoro = () => {
 		}else{
 			setSeconds(seconds - 1);
 			setIsRunning(true);
-			colChange.style.color = "#ED6519";
+			//colChange.style.color = "#ED6519";
 			
 		}
 	  },isRunning ? delay : null);
@@ -89,18 +99,19 @@ const Pomodoro = () => {
 	return (
 		<AllButts>
 			<Clock className="Clock">
-				{message && <div>Vila</div>}
+				{message && <Text>Vila</Text>}
 				{timerMinutes}:{timerSeconds}
 			</Clock>
+
+			<PlayContainer>
+				<Play onClick={()=>setIsRunning(true)}><BsPlayCircle size={100} /></Play>	
+				<Play onClick={()=>setIsRunning(false)}><BsPauseCircle size={100}/></Play>
+			</PlayContainer>
+
 			<Drawer>
-					<TimerButts onClick={()=>{setSeconds(25*60); setDisplayMessage(false); setIsRunning(false); colChange.style.color = "#000000";}}><BsArrowRepeat/></TimerButts>
+				<TimerButts onClick={()=>{setSeconds(25*60); setDisplayMessage(false); setIsRunning(false); colChange.style.color = "#000000";}}><BsArrowRepeat/></TimerButts>
 
-					<TimerButts onClick={()=>setIsRunning(true)}><CgPlayButtonO/></TimerButts>
-
-					<TimerButts onClick={()=>setSeconds(7)}>Ställ in</TimerButts>
-				
-					<TimerButts onClick={()=>setIsRunning(false)}><CgPlayPauseO/></TimerButts>
-					
+				<TimerButts onClick={()=>setSeconds(7)}>Ställ in</TimerButts>
 			</Drawer>
 			
 		</AllButts>
