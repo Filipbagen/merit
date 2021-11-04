@@ -56,6 +56,9 @@ const PlayContainer = styled.div`
 
 const Play = styled.div`
 	color: #12293B;
+	&:hover {
+		fill: #12293B;
+	  }
 `
 const Clock = styled.div`
 	font-size: 100px;
@@ -73,12 +76,12 @@ const Pomodoro = () => {
 	var colChange = document.querySelector('.Clock');
 	const [seconds, setSeconds] = useState(25*60);
 	const [message, setDisplayMessage] = useState(false);
-	const [isRunning, setIsRunning]=useState(true);
+	const [isRunning, setIsRunning]=useState(false);
 	const[delay, setDelay]=useState(1000);
+	const[paused, setPaused]=useState(true);
 
 	useInterval(() => {
 		// Your custom logic here
-		setIsRunning(false);
 		//colChange.style.color = "#000000";
 
 		if(seconds -1 < 1){
@@ -89,7 +92,6 @@ const Pomodoro = () => {
 			setSeconds(seconds - 1);
 			setIsRunning(true);
 			//colChange.style.color = "#ED6519";
-			
 		}
 	  },isRunning ? delay : null);
 
@@ -104,12 +106,12 @@ const Pomodoro = () => {
 			</Clock>
 
 			<PlayContainer>
-				<Play onClick={()=>setIsRunning(true)}><BsPlayCircle size={100} /></Play>	
-				<Play onClick={()=>setIsRunning(false)}><BsPauseCircle size={100}/></Play>
+				{paused ? <Play onClick={()=>{setIsRunning(true); setPaused(false);}}><BsPlayCircle size={100} /></Play> : <Play onClick={()=>{setIsRunning(false); setPaused(true);}}><BsPauseCircle size={100}/></Play>}
+				
 			</PlayContainer>
 
 			<Drawer>
-				<TimerButts onClick={()=>{setSeconds(25*60); setDisplayMessage(false); setIsRunning(false); colChange.style.color = "#000000";}}><BsArrowRepeat/></TimerButts>
+				<TimerButts onClick={()=>{setSeconds(25*60); setDisplayMessage(false); setIsRunning(false); setPaused(true); colChange.style.color = "#000000";}}><BsArrowRepeat/></TimerButts>
 
 				<TimerButts onClick={()=>setSeconds(7)}>Ställ in</TimerButts>
 			</Drawer>
