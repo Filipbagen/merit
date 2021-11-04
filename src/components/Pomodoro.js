@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import useInterval from "../misc/useInterval";
 import styled from "styled-components";
+import { CgPlayButtonO } from 'react-icons/cg';
+import {CgPlayPauseO} from 'react-icons/cg';
+import {BsArrowRepeat} from 'react-icons/bs';
  
 const AllButts = styled.div`
 	min-height: 100vh;
@@ -26,7 +29,10 @@ const Drawer = styled.div`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 150px;
+	height: 100px;
+	border-radius: 25px 25px 0px 0px;
+
+	
 `
 
 const TimerButts = styled.div`
@@ -37,18 +43,20 @@ const TimerButts = styled.div`
 
 	background-color: #F6F6F6;
 	width: 45vw;
-	height: 60px;
+	height: 40px;
 	border-radius: 15px;
 
 	font-size: 24px;
+	
 
 	
 `
 const Clock = styled.div`
-	font-size: 50px;
-	
+	font-size: 70px;
 	
 `
+
+const colChange = document.querySelector('.Clock');
 
 // Component
 const Pomodoro = () => {
@@ -60,11 +68,18 @@ const Pomodoro = () => {
 
 	useInterval(() => {
 		// Your custom logic here
+		setIsRunning(false);
+		//colChange.style.color = "#000000";
+
 		if(seconds -1 < 1){
-			setSeconds(5*60)
+			setSeconds(5*60+5)
 			setDisplayMessage(true)
+			setIsRunning(true);
 		}else{
-		setSeconds(seconds - 1);
+			setSeconds(seconds - 1);
+			setIsRunning(true);
+			colChange.style.color = "#ED6519";
+			
 		}
 	  },isRunning ? delay : null);
 
@@ -73,18 +88,19 @@ const Pomodoro = () => {
 
 	return (
 		<AllButts>
-			<Clock>
+			<Clock className="Clock">
 				{message && <div>Vila</div>}
 				{timerMinutes}:{timerSeconds}
 			</Clock>
 			<Drawer>
-					<TimerButts onClick={()=>setSeconds(25*60)}>Nollställ</TimerButts>
+					<TimerButts onClick={()=>{setSeconds(25*60); setDisplayMessage(false); setIsRunning(false); colChange.style.color = "#000000";}}><BsArrowRepeat/></TimerButts>
+
+					<TimerButts onClick={()=>setIsRunning(true)}><CgPlayButtonO/></TimerButts>
 
 					<TimerButts onClick={()=>setSeconds(7)}>Ställ in</TimerButts>
 				
-					<TimerButts onClick={()=>setIsRunning(false)}>Pause</TimerButts>
+					<TimerButts onClick={()=>setIsRunning(false)}><CgPlayPauseO/></TimerButts>
 					
-					<TimerButts onClick={()=>setIsRunning(true)}>Start</TimerButts>
 			</Drawer>
 			
 		</AllButts>
