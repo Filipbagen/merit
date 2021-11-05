@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { BsPlayCircle } from 'react-icons/bs';
 import {BsPauseCircle} from 'react-icons/bs';
 import {BsArrowRepeat} from 'react-icons/bs';
+
  
 const AllButts = styled.div`
 	min-height: 100vh;
@@ -29,9 +30,10 @@ const Drawer = styled.div`
 	right: 0;
 	bottom: 0;
 	height: 100px;
-	border-radius: 25px 25px 0px 0px;
-`
+	border-radius: 0px 0px 0px 0px;
 
+
+`
 const TimerButts = styled.div`
 	color: black;
 	display: flex;
@@ -40,8 +42,8 @@ const TimerButts = styled.div`
 
 	background-color: #F6F6F6;
 	width: 45vw;
-	height: 40px;
-	border-radius: 15px;
+	height: 60px;
+	border-radius: 10px;
 
 	font-size: 24px;
 `
@@ -55,13 +57,10 @@ const PlayContainer = styled.div`
 `
 
 const Play = styled.div`
-	color: #12293B;
-	&:hover {
-		fill: #12293B;
-	  }
+	color: black;
 `
 const Clock = styled.div`
-	font-size: 100px;
+	font-size: 72px;
 	color: black;
 	
 `
@@ -106,7 +105,7 @@ const Pomodoro = () => {
 			</Clock>
 
 			<PlayContainer>
-				{paused ? <Play onClick={()=>{setIsRunning(true); setPaused(false);}}><BsPlayCircle size={100} /></Play> : <Play onClick={()=>{setIsRunning(false); setPaused(true);}}><BsPauseCircle size={100}/></Play>}
+				{paused ? <Play onClick={()=>{setIsRunning(true); setPaused(false);}}><BsPlayCircle size={100} /></Play> : <Play onClick={()=>{setIsRunning(false); setPaused(true);}}><BsPauseCircle size={100} color={"#ED6519"}/></Play>}
 				
 			</PlayContainer>
 
