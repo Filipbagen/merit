@@ -19,7 +19,7 @@ const AllButts = styled.div`
 	justify-content: center;
 `
 const Drawer = styled.div`
-	background-color: #12293B;
+	background-color: none;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content:space-around;
@@ -41,7 +41,7 @@ const TimerButts = styled.div`
 	align-items: center;
 
 	background-color: #F6F6F6;
-	width: 45vw;
+	width: 40vw;
 	height: 60px;
 	border-radius: 10px;
 
@@ -62,10 +62,17 @@ const Play = styled.div`
 const Clock = styled.div`
 	font-size: 72px;
 	color: black;
-	
 `
 const Text = styled.div`
 	color: black;
+`
+const Vector = styled.svg`
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100vw;
+	z-indez: -1;
 `
 
 
@@ -109,10 +116,16 @@ const Pomodoro = () => {
 				
 			</PlayContainer>
 
+				<Vector width="390" height="160" viewBox="0 0 390 145" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M346 53.0411C376.439 53.0411 389.332 14.8862 390 -3.05176e-05L390 285L3.05176e-05 285L1.50675e-05 108.272C1.17111e-05 69.8789 26 53.0411 44.5 53.0411L346 53.0411Z" fill="#12293B"/>
+				</Vector>
+
 			<Drawer>
+
 				<TimerButts onClick={()=>{setSeconds(25*60); setDisplayMessage(false); setIsRunning(false); setPaused(true); colChange.style.color = "#000000";}}><BsArrowRepeat/></TimerButts>
 
 				<TimerButts onClick={()=>setSeconds(7)}>Ställ in</TimerButts>
+
 			</Drawer>
 			
 		</AllButts>
