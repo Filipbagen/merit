@@ -11,10 +11,8 @@ const AllButts = styled.div`
   min-width: 100vw;
 
   font-family: "Barlow";
-
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 `;
@@ -47,8 +45,6 @@ const TimerButts = styled.div`
 `;
 const PlayContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  min-width: 100vw;
   height: 150px;
   align-items: center;
   justify-content: space-evenly;
