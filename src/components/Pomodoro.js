@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { BsPlayCircle } from 'react-icons/bs';
 import {BsPauseCircle} from 'react-icons/bs';
 import {BsArrowRepeat} from 'react-icons/bs';
+import { Link } from "react-router-dom";
 
  
 const AllButts = styled.div`
@@ -105,6 +106,7 @@ const Pomodoro = () => {
 	const timerSeconds = seconds%60 < 10 ? "0" + seconds%60 : seconds%60;
 
 	return (
+		
 		<AllButts>
 			<Clock className="Clock">
 				{message && <Text>Vila</Text>}
@@ -129,7 +131,7 @@ const Pomodoro = () => {
 			</Drawer>
 			
 		</AllButts>
-	  
+		
 	)
   }
   
