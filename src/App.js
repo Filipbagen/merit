@@ -3,6 +3,7 @@ import Schedule from './components/Schedule'
 import CSVReader from 'react-csv-reader'
 import Pomodoro from './components/Pomodoro'
 import styled from 'styled-components'
+import { BrowserRouter, Router, Switch, Route, Link, Routes } from "react-router-dom";
 
 const Container = styled.div`
   min-height: 100vh;
@@ -11,11 +12,21 @@ const Container = styled.div`
 
 const App = () => {
   return (
-    <Container>
-      
-      <Pomodoro/>
-    </Container>
-  )
+
+     
+        <Container>
+          
+        <BrowserRouter>
+            <Routes>
+              
+              <Route path="pomodoro" element={<Pomodoro />} />
+              
+              
+            </Routes>
+        </BrowserRouter>,
+
+        </Container>)
+
 }
 
 export default App
