@@ -5,6 +5,7 @@ import { BsPlayCircle } from "react-icons/bs";
 import { BsPauseCircle } from "react-icons/bs";
 import { BsArrowRepeat } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { BiArrowBack } from "react-icons/bi";
 
 const AllButts = styled.div`
   min-height: 100vh;
@@ -69,6 +70,13 @@ const Vector = styled.svg`
   z-indez: -1;
 `;
 
+const Back = styled.a`
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black;
+`;
+
 // Component
 const Pomodoro = () => {
   var colChange = document.querySelector(".Clock");
@@ -80,9 +88,6 @@ const Pomodoro = () => {
 
   useInterval(
     () => {
-      // Your custom logic here
-      //colChange.style.color = "#000000";
-
       if (seconds - 1 < 1) {
         setSeconds(5 * 60 + 5);
         setDisplayMessage(true);
@@ -90,7 +95,6 @@ const Pomodoro = () => {
       } else {
         setSeconds(seconds - 1);
         setIsRunning(true);
-        //colChange.style.color = "#ED6519";
       }
     },
     isRunning ? delay : null
@@ -104,6 +108,10 @@ const Pomodoro = () => {
 
   return (
     <AllButts>
+      <Back href="merit">
+        <BiArrowBack size={50} />
+      </Back>
+
       <Clock className="Clock">
         {message && <Text>Vila</Text>}
         {timerMinutes}:{timerSeconds}
