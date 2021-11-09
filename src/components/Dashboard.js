@@ -1,5 +1,3 @@
-
-
 const Dashboard = () => {
 	//lägg till din länk likt nedan
 	return(
@@ -8,4 +6,4 @@ const Dashboard = () => {
 	)
 }
 
-export default Dashboard
+export default Dashboard;

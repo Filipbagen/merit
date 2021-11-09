@@ -20,6 +20,7 @@ const App = () => {
     <Router>
       <Container>
         <Routes>
+          <Route path='/pomodoro' element={<Pomodoro />} />
 
           <Route path='/pomodoro' element={<Pomodoro />} />
 
