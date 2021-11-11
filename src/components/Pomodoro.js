@@ -79,18 +79,28 @@ const Back = styled.a`
 
 // Component
 const Pomodoro = () => {
-  var colChange = document.querySelector(".Clock");
+  //var colChange = document.querySelector(".Clock");
   const [seconds, setSeconds] = useState(25 * 60);
   const [message, setDisplayMessage] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [delay, setDelay] = useState(1000);
   const [paused, setPaused] = useState(true);
+  const [vila, setVila] = useState(5 * 60 + 5);
 
   useInterval(
     () => {
-      if (seconds - 1 < 1) {
-        setSeconds(5 * 60 + 5);
+      if (seconds === 0 && vila === 0) {
+        setSeconds(25 * 60);
+        setVila(5 * 60);
+        setDisplayMessage(false);
+      } else if (seconds - 1 < 0 && vila > 0) {
+        setVila(vila - 1);
         setDisplayMessage(true);
+        setIsRunning(true);
+      } else if (vila - 1 < 0 && seconds - 1 < 0) {
+        setSeconds(25 * 60);
+        setSeconds(seconds - 1);
+        setDisplayMessage(false);
         setIsRunning(true);
       } else {
         setSeconds(seconds - 1);
@@ -106,6 +116,12 @@ const Pomodoro = () => {
       : Math.floor(seconds / 60);
   const timerSeconds = seconds % 60 < 10 ? "0" + (seconds % 60) : seconds % 60;
 
+  const timerVilaMin =
+    Math.floor(vila / 60) < 10
+      ? "0" + Math.floor(vila / 60)
+      : Math.floor(vila / 60);
+  const timerVilaSec = vila % 60 < 10 ? "0" + (vila % 60) : vila % 60;
+
   return (
     <AllButts>
       <Back href="merit">
@@ -113,8 +129,16 @@ const Pomodoro = () => {
       </Back>
 
       <Clock className="Clock">
-        {message && <Text>Vila</Text>}
-        {timerMinutes}:{timerSeconds}
+        {message ? (
+          <p>
+            <Text>Vila</Text>
+            {timerVilaMin}:{timerVilaSec}
+          </p>
+        ) : (
+          <p>
+            {timerMinutes}:{timerSeconds}
+          </p>
+        )}
       </Clock>
 
       <PlayContainer>
@@ -159,7 +183,7 @@ const Pomodoro = () => {
             setDisplayMessage(false);
             setIsRunning(false);
             setPaused(true);
-            colChange.style.color = "#000000";
+            //colChange.style.color = "#000000";
           }}
         >
           <BsArrowRepeat />
