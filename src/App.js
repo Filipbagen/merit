@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Message from "./components/Message";
+import Logo from "./components/Logo";
 
 const Container = styled.div`
   min-height: 100vh;
@@ -27,6 +28,8 @@ const App = () => {
           <Route path="/merit" element={<Dashboard />} />
 
           <Route path="/Message" element={<Message />} />
+
+          <Route path="/Logo" element={<Logo />} />
         </Routes>
       </Container>
     </Router>

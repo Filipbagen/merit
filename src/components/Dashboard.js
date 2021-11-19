@@ -8,6 +8,9 @@ const Dashboard = () => {
       <a href="Message">
         <button>Message</button>
       </a>
+      <a href="Logo">
+        <button>Logo</button>
+      </a>
     </div>
   );
 };
