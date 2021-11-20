@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Test website</h1>
-        {hour >= 12 ? hour >= 18 ? <h2>God kväll</h2> : <h2>God Förmiddag</h2> : <h2>God Morgon</h2>}
+        {hour >= 12 ? hour >= 18 ? <h2>God kväll</h2> : <h2>God Eftermiddag</h2> : <h2>God Morgon</h2>}
       </div>
     )
   }
