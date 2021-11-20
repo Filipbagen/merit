@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useInterval from "../misc/useInterval";
 import styled from "styled-components";
 import { BsPlayCircle } from "react-icons/bs";
 import { BsPauseCircle } from "react-icons/bs";
 import { BsArrowRepeat } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 
 const AllButts = styled.div`
@@ -16,7 +15,8 @@ const AllButts = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
+`
+
 const Drawer = styled.div`
   background-color: none;
   display: flex;
@@ -30,7 +30,8 @@ const Drawer = styled.div`
   bottom: 0;
   height: 100px;
   border-radius: 0px 0px 0px 0px;
-`;
+`
+
 const TimerButts = styled.div`
   color: black;
   display: flex;
@@ -43,24 +44,28 @@ const TimerButts = styled.div`
   border-radius: 10px;
 
   font-size: 24px;
-`;
+`
+
 const PlayContainer = styled.div`
   display: flex;
   height: 150px;
   align-items: center;
   justify-content: space-evenly;
-`;
+`
 
 const Play = styled.div`
   color: black;
-`;
+`
+
 const Clock = styled.div`
   font-size: 72px;
   color: black;
-`;
+`
+
 const Text = styled.div`
   color: black;
-`;
+`
+
 const Vector = styled.svg`
   position: absolute;
   bottom: 0;
@@ -68,22 +73,22 @@ const Vector = styled.svg`
   left: 0;
   width: 100vw;
   z-indez: -1;
-`;
+`
 
 const Back = styled.a`
   position: absolute;
   top: 0;
   left: 0;
   color: black;
-`;
+`
 
 // Component
 const Pomodoro = () => {
   //var colChange = document.querySelector(".Clock");
-  const [seconds, setSeconds] = useState(25 * 60);
+  const [seconds, setSeconds] = useState(25 * 60); 
   const [message, setDisplayMessage] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
-  const [delay, setDelay] = useState(1000);
+  const [delay] = useState(1000);
   const [paused, setPaused] = useState(true);
   const [vila, setVila] = useState(5 * 60 + 5);
 
