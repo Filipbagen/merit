@@ -1,5 +1,6 @@
 // import { render } from "@testing-library/react";
 import React from 'react'
+import Quotes from './Quotes'
 
 class App extends React.Component {
   render () {
@@ -7,7 +8,7 @@ class App extends React.Component {
     const hour = date.getHours()
     return (
       <div>
-        <h1>Test website</h1>
+        <Quotes />
         {hour >= 12 ? hour >= 18 ? <h2>God kväll</h2> : <h2>God Eftermiddag</h2> : <h2>God Morgon</h2>}
       </div>
     )

@@ -19,7 +19,6 @@ const Container = styled.div`
 const App = () => {
   return (
     <Router>
-      <Quotes />
       <Container>
         <Routes>
           <Route path='/pomodoro' element={<Pomodoro />} />
@@ -30,9 +29,9 @@ const App = () => {
 
           <Route path='/Message' element={<Message />} />
 
-          <Route path='/Logo' element={<Logo />} />
+          {/* <Route path='/Logo' element={<Logo />} />
 
-          <Route path='/Progressbar' element={<Progressbar />} />
+          <Route path='/Progressbar' element={<Progressbar />} /> */}
         </Routes>
       </Container>
     </Router>
