@@ -4,6 +4,9 @@ import styled from 'styled-components'
 const Quote = styled.h2`
     font-family: 'Barlow', sans-serif;
     margin: 20pt 15pt;
+    display: flex;
+    text-align: center;
+    
 `
 
 const Quotes = () => {

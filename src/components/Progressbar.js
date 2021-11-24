@@ -17,10 +17,10 @@ const Progressbar = () => {
 
   return (
     <div>
+      <h3 className='percent-number'>Klart av MT: {percentageDiff}%</h3>
       <div className='progress-div'>
         <div style={{ width: `${value}px` }} className='progress' />
       </div>
-      <h1 className='percent-number'>{percentageDiff} %</h1>
     </div>
   )
 }

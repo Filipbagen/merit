@@ -29,7 +29,6 @@ const Drawer = styled.div`
   right: 0;
   bottom: 0;
   height: 100px;
-  border-radius: 0px 0px 0px 0px;
 `
 
 const TimerButts = styled.div`
@@ -129,7 +128,7 @@ const Pomodoro = () => {
 
   return (
     <AllButts>
-      <Back href="merit">
+      <Back href="/">
         <BiArrowBack size={50} />
       </Back>
 

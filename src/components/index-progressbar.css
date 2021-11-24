@@ -6,7 +6,7 @@
     border-radius: 15px;
     height: 30pt;
     width: 1000pt;
-    max-width: 460pt;
+    max-width: 80vw;
     overflow: hidden;
     position: relative;
     z-index:1 ;
@@ -28,12 +28,4 @@
       transition-delay: 0.01s;
       border-radius: 0.4rem;
       margin: 0;
-    }
-    
-     
-    
-    .percent-number {
-      color: rgb(0, 0, 0);
-      font-size: 30px;
-      padding-bottom: 100px;
     }

@@ -1,6 +1,12 @@
 // import { render } from "@testing-library/react";
 import React from 'react'
-import Quotes from './Quotes'
+import styled from 'styled-components'
+
+const Heading = styled.h1`
+  font-family: 'Barlow', sans-serif;
+  position: absolute;
+  margin: 30px 30px;
+`
 
 class App extends React.Component {
   render () {
@@ -8,8 +14,7 @@ class App extends React.Component {
     const hour = date.getHours()
     return (
       <div>
-        <Quotes />
-        {hour >= 12 ? hour >= 18 ? <h2>God kväll</h2> : <h2>God Eftermiddag</h2> : <h2>God Morgon</h2>}
+        {hour >= 12 ? hour >= 18 ? <Heading>God kväll</Heading> : <Heading>God eftermiddag</Heading> : <Heading>Godmorgon</Heading>}
       </div>
     )
   }
