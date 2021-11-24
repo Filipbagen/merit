@@ -25,7 +25,8 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  0px 0px 30px 8px rgba(0,0,0,0.2)
+  box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.1);
 `
 
 const Head = styled.div`
