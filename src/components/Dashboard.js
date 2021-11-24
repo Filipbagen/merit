@@ -1,13 +1,14 @@
-import React from 'react'
-import Message from './Message'
-import Quotes from './Quotes'
-import Progressbar from './Progressbar'
-import styled from 'styled-components'
+import React from "react";
+import Message from "./Message";
+import Quotes from "./Quotes";
+import Progressbar from "./Progressbar";
+import styled from "styled-components";
+import Calendar from "./Calendar";
 
 const Timer = styled.a`
-  border-radius: 10px; 
+  border-radius: 10px;
   height: 84px;
-  background-color: #12293B;
+  background-color: #12293b;
   width: 300px;
   color: white;
   font-size: 26px;
@@ -15,7 +16,7 @@ const Timer = styled.a`
   vertical-align: middle;
   line-height: 20px;
   text-decoration: none;
-`
+`;
 
 const Content = styled.div`
   min-height: 80vh;
@@ -25,32 +26,32 @@ const Content = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.1);
-`
+  box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+`;
 
 const Head = styled.div`
   height: 20vh;
   width; 100vw;
-`
+`;
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   margin: 0;
-  background-color: #D7C0D0;
-`
+  background-color: #d7c0d0;
+`;
 
 const Dashboard = () => {
   return (
     <Container>
-
       <Head>
         <Message />
+        <Calendar />
       </Head>
 
       <Content>
-        <Timer href='pomodoro'>
+        <Timer href="pomodoro">
           <h2>TIMER</h2>
         </Timer>
 
@@ -58,9 +59,8 @@ const Dashboard = () => {
 
         <Quotes />
       </Content>
-
     </Container>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
