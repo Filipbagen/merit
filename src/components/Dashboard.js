@@ -1,9 +1,10 @@
-import React from "react";
-import Message from "./Message";
-import Quotes from "./Quotes";
-import Progressbar from "./Progressbar";
-import styled from "styled-components";
-import Calendar from "./Calendar";
+import React from 'react'
+import Message from './Message'
+import Quotes from './Quotes'
+import Progressbar from './Progressbar'
+import styled from 'styled-components'
+import Calendar from './Calendar'
+import CourseMap from './CourseMap'
 
 const Timer = styled.a`
   border-radius: 10px;
@@ -16,7 +17,7 @@ const Timer = styled.a`
   vertical-align: middle;
   line-height: 20px;
   text-decoration: none;
-`;
+`
 
 const Content = styled.div`
   min-height: 80vh;
@@ -28,19 +29,26 @@ const Content = styled.div`
   align-items: center;
   box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
-`;
+`
 
 const Head = styled.div`
   height: 20vh;
   width; 100vw;
-`;
+`
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   margin: 0;
   background-color: #d7c0d0;
-`;
+`
+
+const Courses = styled.div`
+  padding-left: 10px;
+  width: 100vw;
+  overflow: auto;
+  display: flex;
+`
 
 const Dashboard = () => {
   return (
@@ -51,7 +59,13 @@ const Dashboard = () => {
       </Head>
 
       <Content>
-        <Timer href="pomodoro">
+
+        <h1>Nuvarande kurser</h1>
+        <Courses>
+          <CourseMap />
+        </Courses>
+
+        <Timer href='pomodoro'>
           <h2>TIMER</h2>
         </Timer>
 
@@ -60,7 +74,7 @@ const Dashboard = () => {
         <Quotes />
       </Content>
     </Container>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

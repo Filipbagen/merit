@@ -1,7 +1,7 @@
 import { PieChart } from 'react-minimal-pie-chart'
 import styled from 'styled-components'
 
-const Test = styled.div`
+const Diagram = styled.div`
   height: 200px;
 `
 
@@ -14,9 +14,9 @@ const Chart = ({ data }) => {
   })
 
   return (
-    <Test>
+    <Diagram>
       <PieChart data={pieData} />
-    </Test>
+    </Diagram>
   )
 }
 
