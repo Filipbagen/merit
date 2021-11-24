@@ -1,8 +1,8 @@
 import React from 'react'
 import Message from './Message'
-import Quotes from "./Quotes";
-import Progressbar from "./Progressbar"
-import styled from 'styled-components';
+import Quotes from './Quotes'
+import Progressbar from './Progressbar'
+import styled from 'styled-components'
 
 const Timer = styled.a`
   border-radius: 10px; 
@@ -42,23 +42,22 @@ const Container = styled.div`
 `
 
 const Dashboard = () => {
-  
   return (
-      <Container>
+    <Container>
 
-        <Head>
-            <Message />
-        </Head>
+      <Head>
+        <Message />
+      </Head>
 
-        <Content>
-            <Timer href="pomodoro">
-                <h2>TIMER</h2>
-            </Timer>
+      <Content>
+        <Timer href='pomodoro'>
+          <h2>TIMER</h2>
+        </Timer>
 
-            <Progressbar />
+        <Progressbar />
 
-            <Quotes />
-        </Content>
+        <Quotes />
+      </Content>
 
     </Container>
   )

@@ -6,23 +6,20 @@ const Quote = styled.h2`
     margin: 20pt 15pt;
     display: flex;
     text-align: center;
-    
 `
 
 const Quotes = () => {
+  const randomNum = (max) => {
+    return Math.floor(Math.random() * max)
+  }
 
-    const randomNum = (max) => {
-        return Math.floor(Math.random() * max)
-    }
+  const quote = data.quotes[randomNum(data.quotes.length)].quote
 
-    const quote = data.quotes[randomNum(data.quotes.length)].quote
+  return (
+    <div>
+      <Quote>{quote}</Quote>
+    </div>
+  )
+}
 
-    return (
-        <div>
-            <Quote>{quote}</Quote>
-        </div>
-        )
-    }
-  
-  export default Quotes;
-  
+export default Quotes
