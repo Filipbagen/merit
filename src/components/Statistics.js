@@ -13,7 +13,7 @@ const Statistics = () => {
 
   const fetchStatics = async () => {
     const url = new URL('https://liu-server.herokuapp.com/statistics')
-    const params = { course: 'TNA007', module: 'TEN1' }
+    const params = { course: 'TNA004', module: 'TEN1' }
     url.search = new URLSearchParams(params).toString()
     const res = await window.fetch(url)
     const resData = await res.json()

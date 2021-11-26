@@ -5,6 +5,7 @@ import Progressbar from './Progressbar'
 import styled from 'styled-components'
 import Calendar from './Calendar'
 import CourseMap from './CourseMap'
+// import Statistics from './Statistics'
 
 const Timer = styled.a`
   border-radius: 10px;
@@ -59,6 +60,8 @@ const Dashboard = () => {
       </Head>
 
       <Content>
+
+        {/* <Statistics /> */}
 
         <h1>Nuvarande kurser</h1>
         <Courses>
