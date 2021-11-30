@@ -15,7 +15,7 @@ const AllButts = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
+`;
 
 const Drawer = styled.div`
   background-color: none;
@@ -29,7 +29,7 @@ const Drawer = styled.div`
   right: 0;
   bottom: 0;
   height: 100px;
-`
+`;
 
 const TimerButts = styled.div`
   color: black;
@@ -43,27 +43,27 @@ const TimerButts = styled.div`
   border-radius: 10px;
 
   font-size: 24px;
-`
+`;
 
 const PlayContainer = styled.div`
   display: flex;
   height: 150px;
   align-items: center;
   justify-content: space-evenly;
-`
+`;
 
 const Play = styled.div`
   color: black;
-`
+`;
 
 const Clock = styled.div`
   font-size: 72px;
   color: black;
-`
+`;
 
 const Text = styled.div`
   color: black;
-`
+`;
 
 const Vector = styled.svg`
   position: absolute;
@@ -71,20 +71,23 @@ const Vector = styled.svg`
   right: 0;
   left: 0;
   width: 100vw;
+  background-color: #12293b;
+  height: 100px;
+  border-radius: 20px 20px 0px 0px;
   z-indez: -1;
-`
+`;
 
 const Back = styled.a`
   position: absolute;
   top: 0;
   left: 0;
   color: black;
-`
+`;
 
 // Component
 const Pomodoro = () => {
   //var colChange = document.querySelector(".Clock");
-  const [seconds, setSeconds] = useState(25 * 60); 
+  const [seconds, setSeconds] = useState(25 * 60);
   const [message, setDisplayMessage] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
   const [delay] = useState(1000);
@@ -167,18 +170,7 @@ const Pomodoro = () => {
         )}
       </PlayContainer>
 
-      <Vector
-        width="390"
-        height="160"
-        viewBox="0 0 390 145"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M346 53.0411C376.439 53.0411 389.332 14.8862 390 -3.05176e-05L390 285L3.05176e-05 285L1.50675e-05 108.272C1.17111e-05 69.8789 26 53.0411 44.5 53.0411L346 53.0411Z"
-          fill="#12293B"
-        />
-      </Vector>
+      <Vector></Vector>
 
       <Drawer>
         <TimerButts
