@@ -14,7 +14,7 @@ class App extends React.Component {
     const hour = date.getHours()
     return (
       <div>
-        {hour >= 12 ? hour >= 18 ? <Heading>God kväll</Heading> : <Heading>God eftermiddag</Heading> : <Heading>Godmorgon</Heading>}
+        {hour >= 10 ? hour >= 12 ? hour >= 18 ? <Heading>God kväll</Heading> : <Heading>God eftermiddag</Heading> : <Heading>God förmiddag</Heading> : <Heading>Godmorgon</Heading>}
       </div>
     )
   }
