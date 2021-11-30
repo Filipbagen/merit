@@ -1,30 +1,37 @@
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
 const Course = ({ courseCode, courseName }) => {
-  const box = {
-    height: '120px',
-    width: '120px',
-    margin: '16px',
-    padding: '20px',
-    boxShadow: '8px 8px 8px rgba(18, 41, 59, 0.31)',
-    borderRadius: '10px',
-    backgroundColor: '#F9F9F9'
-  }
+  const Box = styled.div`
+    height: 120px;
+    width: 120px;
+    margin: 16px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #F9F9F;
+`
 
-  const code = {
-    width: '120px',
-    textAlign: 'left',
-    fontWeight: 'bold'
-  }
+  const Name = styled.div`
+    text-align: left;
+`
 
-  const name = {
-    textAlign: 'left'
-  }
+  const Code = styled.div`
+    width: 120px;
+    text-align: left;
+    font-weight: bold: 
+`
+
+  const detailedPath = '/merit/' + courseCode
 
   return (
-    <div style={box}>
-      <div style={code}>{courseCode} </div>
-      <br />
-      <div style={name}>{courseName} </div>
-    </div>
+    <Link to={detailedPath}>
+      <Box>
+        <Code>{courseCode}</Code>
+        <br />
+        <Name>{courseName}</Name>
+      </Box>
+    </Link>
   )
 }
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import Course from './Course'
+import styled from 'styled-components'
 
-const App = () => {
+const CourseMap = () => {
   const courseData = [{ coursecCode: 'TNA001', name: 'Matematisk grundkurs', preCourse: '', literature: 'Matematisk analys, en variabel', about: null },
     { coursecCode: 'TND012', name: 'Programmering grk', preCourse: '', literature: 'Programming: Principles and Practice Using C++#C++ direkt#C++ Primer ', about: null },
     { coursecCode: 'TNM088', name: 'Digitala medier', preCourse: '', literature: '', about: null },
@@ -65,20 +66,18 @@ const App = () => {
     { coursecCode: 'TDDE02', name: 'Mjukvarutekniskt entreprenörskap', preCourse: 'TNG033, TNM046, TNG015, TNM040, TNM031, TNM096', literature: '', about: null },
     { coursecCode: 'TNCG13', name: 'SFX - Tricks of the trade', preCourse: 'TNCG15', literature: '', about: null }]
 
-  const total = {
-    paddingLeft: '10px',
-    width: '100%',
-    overflow: 'auto',
-    display: 'flex'
-  }
+  const Total = styled.div`
+  padding-left: 10px;
+  width: 100vw;
+  overflow: auto;
+  display: flex;
+`
 
   return (
-    <div>
-      <div style={total}>
-        {courseData.map(course => <Course courseCode={course.coursecCode} courseName={course.name} key={course.coursecCode} />)}
-      </div>
-    </div>
+    <Total>
+      {courseData.map(course => <Course courseCode={course.coursecCode} courseName={course.name} key={course.coursecCode} />)}
+    </Total>
   )
 }
 
-export default App
+export default CourseMap
