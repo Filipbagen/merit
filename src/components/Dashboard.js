@@ -31,6 +31,7 @@ const Timer = styled.a`
   line-height: 20px;
   text-decoration: none;
   margin: 20px;
+  
 `
 const Head = styled.div`
   height: 20vh;
@@ -64,7 +65,12 @@ padding-bottom: 10px;
 padding-left: 20px;
 text-decoration: underline;
 font-family: Barlow;
+align-self: flex-start;
 `
+const Quote = styled.div`
+
+`
+
 const Dashboard = () => {
   return (
     <Container>
@@ -73,7 +79,6 @@ const Dashboard = () => {
         <Calendar />
       </Head>
 
-      
       <Content>
         <Text> Nuvarande kurser</Text>
         <Courses>
@@ -81,19 +86,20 @@ const Dashboard = () => {
         </Courses>
 
         <Text> Nästa examination</Text>
-        <Exstyle> 
-           <Exmap></Exmap>
-         </Exstyle>
+        <Exstyle>
+          <Exmap />
+        </Exstyle>
 
-         
         <Timer href='pomodoro'>
           <h2>TIMER</h2>
         </Timer>
-        
 
         <Progressbar />
 
-        <Quotes />
+        <Quote>
+          <Quotes />
+        </Quote>
+
       </Content>
     </Container>
   )
