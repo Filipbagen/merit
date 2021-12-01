@@ -7,6 +7,18 @@ import Calendar from './Calendar'
 import CourseMap from './CourseMap'
 import Exmap from './Exmap'
 
+const Content = styled.div`
+  min-height: 80vh;
+  background-color: white;
+  border-radius: 44px 44px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+`
+
 const Timer = styled.a`
   border-radius: 10px;
   height: 84px;
@@ -18,22 +30,8 @@ const Timer = styled.a`
   vertical-align: middle;
   line-height: 20px;
   text-decoration: none;
-  align-items: center;
+  margin: 20px;
 `
-
-const Content = styled.div`
-  min-height: 80vh;
-  background-color: white;
-  border-radius: 44px 44px 0px 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
-`
-
-// align-items: center;
-
 const Head = styled.div`
   height: 20vh;
   width; 100vw;
@@ -42,8 +40,8 @@ const Head = styled.div`
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
-  margin: 0;
   background-color: #d7c0d0;
+  justify-content: space-evenly;
 `
 
 const Courses = styled.div`
@@ -52,19 +50,21 @@ const Courses = styled.div`
   overflow: auto;
   display: flex;
 `
-// test
 const Exstyle = styled.div`
 padding: 15px; 
-margin-bottom: 35px; 
-margin-left: 20px;
+margin-bottom: 80px; 
+margin-left: 10px;
+height: 45px;
 `
-
 const Text = styled.div`
-font-size: 20px; 
+font-size: 23px; 
 text-align: left; 
+padding-top: 30px;
+padding-bottom: 10px;
+padding-left: 20px;
+text-decoration: underline;
+font-family: Barlow;
 `
-
-
 const Dashboard = () => {
   return (
     <Container>
@@ -73,8 +73,8 @@ const Dashboard = () => {
         <Calendar />
       </Head>
 
+      
       <Content>
-
         <Text> Nuvarande kurser</Text>
         <Courses>
           <CourseMap />
@@ -85,9 +85,11 @@ const Dashboard = () => {
            <Exmap></Exmap>
          </Exstyle>
 
+         
         <Timer href='pomodoro'>
           <h2>TIMER</h2>
         </Timer>
+        
 
         <Progressbar />
 

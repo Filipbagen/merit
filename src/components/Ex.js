@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 const Ex = ({ courseCode, courseName, courseType, courseDate, courseTime }) => {
-// test
+
 const Box = styled.div`
-    height: 40px;
-    width: 140px;
+    height: 45px;
+    width: 170px;
     margin: 10px;
-    padding: 20px;
+    padding: 22px;
     border-radius: 10px;
     background-color: #F9F9F;
     color: black; 
@@ -16,13 +16,14 @@ const Box = styled.div`
 
 const Name = styled.div`
     text-align: left; 
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold:
+    color: red; 
 `
 const Code = styled.div`
     width: 120px;
     text-align: left;
-    font-size: 14px;
+    font-size: 20px;
     font-family: Barlow;
 `
 const Type = styled.div`
@@ -34,16 +35,17 @@ const Type = styled.div`
 const Date = styled.div`
     width: 120px;
     text-align: left; 
-    color: #ed6519; 
-    font-size: 14px;
-    font-family: Barlow;
+    font-family: Halant;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #ED6519;
 `
     return (
         <Box>
             <Code>{courseCode} </Code>
-            <Name>{courseName} </Name> 
-            <Type>{courseType} <br /> </Type> 
-            <Date>{courseDate} {courseTime} </Date>
+            <Date>{courseDate} <br /> {courseTime} </Date>
         </Box>
     )
 }

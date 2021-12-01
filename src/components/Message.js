@@ -5,7 +5,8 @@ import styled from 'styled-components'
 const Heading = styled.h1`
   font-family: 'Barlow', sans-serif;
   position: absolute;
-  margin: 30px 30px;
+  margin: 35px 10px;
+  font-size: 43px;
 `
 
 class App extends React.Component {

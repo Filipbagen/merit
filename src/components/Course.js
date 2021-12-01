@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 const Course = ({ courseCode, courseName }) => {
   const Box = styled.div`
-    height: 120px;
-    width: 120px;
+    height: 130px;
+    width: 130px;
     margin: 16px;
     padding: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    box-shadow: 3px 4px 8px rgba(18, 41, 59, 0.31);
+    border-radius: 14px;
     background-color: #F9F9F;
     color: black; 
     text-decoration: none;
@@ -16,17 +16,19 @@ const Course = ({ courseCode, courseName }) => {
 
   const Name = styled.div`
     text-align: left; 
-    font-size: 15px;
-    font-family: Barlow;
-    
+    font-size: 18px;
+    font-family: Halant;
+    font-weight: light;
 `
 
   const Code = styled.div`
     width: 120px;
-    text-align: left;
-    font-size: 25px;
-    font-weight: bold:
+    padding-top: 10px;
     font-family: Barlow;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 29px;
 `
 
   const detailedPath = '/merit/' + courseCode
