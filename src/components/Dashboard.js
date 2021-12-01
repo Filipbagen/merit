@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Calendar from './Calendar'
 import CourseMap from './CourseMap'
 // import Statistics from './Statistics'
+import Exmap from './Exmap'
 
 const Timer = styled.a`
   border-radius: 10px;
@@ -51,6 +52,13 @@ const Courses = styled.div`
   display: flex;
 `
 
+const Exstyle = styled.div`
+padding: 15px; 
+margin-bottom: 35px; 
+margin-left: 20px;
+`
+
+
 const Dashboard = () => {
   return (
     <Container>
@@ -67,6 +75,10 @@ const Dashboard = () => {
         <Courses>
           <CourseMap />
         </Courses>
+
+      <Exstyle> 
+          <Exmap></Exmap>
+      </Exstyle>
 
         <Timer href='pomodoro'>
           <h2>TIMER</h2>

@@ -10,10 +10,13 @@ const Course = ({ courseCode, courseName }) => {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     background-color: #F9F9F;
+    color: black; 
+    text-decoration: none;
 `
 
   const Name = styled.div`
-    text-align: left;
+    text-align: left; 
+    
 `
 
   const Code = styled.div`
@@ -25,7 +28,7 @@ const Course = ({ courseCode, courseName }) => {
   const detailedPath = '/merit/' + courseCode
 
   return (
-    <Link to={detailedPath}>
+    <Link to={detailedPath} style = {{textDecoration: 'none', color: 'black',}}>
       <Box>
         <Code>{courseCode}</Code>
         <br />
