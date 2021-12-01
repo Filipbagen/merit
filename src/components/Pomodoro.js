@@ -186,7 +186,7 @@ const Pomodoro = () => {
           <BsArrowRepeat />
         </TimerButts>
 
-        <TimerButts onClick={() => setSeconds(7)}>Ställ in</TimerButts>
+        {/* <TimerButts onClick={() => setSeconds(7)}>Ställ in</TimerButts> */}
       </Drawer>
     </AllButts>
   )

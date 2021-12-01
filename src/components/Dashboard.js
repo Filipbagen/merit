@@ -32,6 +32,7 @@ const Timer = styled.a`
   line-height: 20px;
   text-decoration: none;
   margin: 20px;
+  
 `
 
 const Head = styled.div`
@@ -67,7 +68,12 @@ padding-bottom: 10px;
 padding-left: 20px;
 text-decoration: underline;
 font-family: Barlow;
+align-self: flex-start;
 `
+const Quote = styled.div`
+
+`
+
 const Dashboard = () => {
   return (
     <Container>
@@ -92,7 +98,10 @@ const Dashboard = () => {
 
         <Progressbar />
 
-        <Quotes />
+        <Quote>
+          <Quotes />
+        </Quote>
+
       </Content>
     </Container>
   )
