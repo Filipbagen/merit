@@ -29,18 +29,22 @@ const Calendar = () => {
   let today = new Date()
 
   const data = []
+  data.push({ title: weekdays[today.getDay()], date: today.getDate(), isToday: true })
 
-  console.log(new Date(today.getTime() + 24 * 60 * 60 * 1000))
-
-  for (let i = 0; i < 5; i++) {
-    today = new Date(today.getTime() + (24 * 60 * 60 * 1000) * i)
-    data.push({ title: weekdays[today.getDay()], date: today.getDate(), isToday: i === 0 })
-    console.log(data[i])
+  for (let i = 0; i < 4; i++) {
+    today = new Date(today.getTime() + 24 * 60 * 60 * 1000)
+    data.push({ title: weekdays[today.getDay()], date: today.getDate(), isToday: false })
   }
 
   return (
     <Week>
-      {data.map((item, index) => <Circle color={data[index].isToday ? '#ED6519' : 'white'} key={data.date}> {item.title} <br />{item.date} </Circle>)}
+      {data.map((item) => (
+        <Circle color={item.isToday ? '#ED6519' : 'white'} key={item.date}>
+          {' '}
+          {item.title} <br />
+          {item.date}{' '}
+        </Circle>
+      ))}
     </Week>
   )
 }
