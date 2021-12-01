@@ -117,16 +117,10 @@ const Pomodoro = () => {
     isRunning ? delay : null
   );
 
-  const timerMinutes =
-    Math.floor(seconds / 60) < 10
-      ? "0" + Math.floor(seconds / 60)
-      : Math.floor(seconds / 60);
+  const timerMinutes = Math.floor(seconds / 60) < 10 ? "0" + Math.floor(seconds / 60) : Math.floor(seconds / 60);
   const timerSeconds = seconds % 60 < 10 ? "0" + (seconds % 60) : seconds % 60;
 
-  const timerVilaMin =
-    Math.floor(vila / 60) < 10
-      ? "0" + Math.floor(vila / 60)
-      : Math.floor(vila / 60);
+  const timerVilaMin = Math.floor(vila / 60) < 10 ? "0" + Math.floor(vila / 60) : Math.floor(vila / 60);
   const timerVilaSec = vila % 60 < 10 ? "0" + (vila % 60) : vila % 60;
 
   return (
@@ -185,7 +179,7 @@ const Pomodoro = () => {
           <BsArrowRepeat />
         </TimerButts>
 
-        <TimerButts onClick={() => setSeconds(7)}>Ställ in</TimerButts>
+        {/* <TimerButts onClick={() => setSeconds(7)}>Ställ in</TimerButts> */}
       </Drawer>
     </AllButts>
   );
