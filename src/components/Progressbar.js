@@ -16,7 +16,7 @@ const Progressbar = () => {
 
   return (
     <div>
-      <h3 className='percent-number' style = {{fontSize: '23px', fontFamily: 'Barlow', textDecoration: 'underline'}}>Klart av MT: {percentageDiff}%</h3>
+      <h3 className='percent-number' style={{ fontSize: '23px', fontFamily: 'Barlow', textDecoration: 'underline' }}>Klart av MT: {percentageDiff}%</h3>
       <div className='progress-div'>
         <div style={{ width: `${value}%` }} className='progress' />
       </div>

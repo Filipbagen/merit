@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Calendar from './Calendar'
 import CourseMap from './CourseMap'
 import Exmap from './Exmap'
+// import Background from './Background'
 
 const Content = styled.div`
   min-height: 80vh;
@@ -32,14 +33,16 @@ const Timer = styled.a`
   text-decoration: none;
   margin: 20px;
 `
+
 const Head = styled.div`
   height: 20vh;
   width; 100vw;
 `
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
   background-color: #d7c0d0;
   justify-content: space-evenly;
 `
@@ -73,23 +76,19 @@ const Dashboard = () => {
         <Calendar />
       </Head>
 
-      
       <Content>
-        <Text> Nuvarande kurser</Text>
+        <Text>Nuvarande kurser</Text>
         <Courses>
           <CourseMap />
         </Courses>
 
-        <Text> Nästa examination</Text>
-        <Exstyle> 
-           <Exmap></Exmap>
-         </Exstyle>
+        <Exstyle>
+          <Exmap />
+        </Exstyle>
 
-         
         <Timer href='pomodoro'>
           <h2>TIMER</h2>
         </Timer>
-        
 
         <Progressbar />
 

@@ -4,6 +4,7 @@ import './App.css'
 import Pomodoro from './components/Pomodoro'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Dashboard from './components/Dashboard'
+import CourseDetails from './components/CourseDetails'
 
 // För att rendera din komponent, lägg till en länk i Dashboard.js
 // och lägg till en route likt nedan.
@@ -12,10 +13,13 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/pomodoro' element={<Pomodoro />} />
+        <Route path='/pomodoro/' element={<Pomodoro />} />
 
         <Route path='/' element={<Dashboard />} />
-        <Route path='/merit' element={<Dashboard />} />
+
+        <Route path='/merit/' element={<Dashboard />} />
+
+        <Route path='/merit/:courseCode' element={<CourseDetails />} />
       </Routes>
     </Router>
   )

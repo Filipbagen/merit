@@ -8,8 +8,6 @@ const Diagram = styled.div`
 const colors = ['#3B484F', '#ED6519', 'red', 'blue']
 
 const Chart = ({ data }) => {
-  console.log(data?.grades)
-
   const pieData = data.grades.map((grade, i) => {
     return ({ title: grade.grade, value: grade.quantity, color: colors[i] }) // switch case
   })

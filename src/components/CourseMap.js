@@ -2,9 +2,19 @@ import React from 'react'
 import Course from './Course'
 import styled from 'styled-components'
 
+const Total = styled.div`
+padding-left: 10px;
+width: 100vw;
+overflow: auto;
+display: flex;
+&::-webkit-scrollbar {
+  display: none;
+}
+`
+
 const CourseMap = () => {
-   const courseData = [
-     //{ coursecCode: 'TNA001', name: 'Matematisk grundkurs', preCourse: '', literature: 'Matematisk analys, en variabel', about: null },
+  const courseData = [
+    // { coursecCode: 'TNA001', name: 'Matematisk grundkurs', preCourse: '', literature: 'Matematisk analys, en variabel', about: null },
   //   { coursecCode: 'TND012', name: 'Programmering grk', preCourse: '', literature: 'Programming: Principles and Practice Using C++#C++ direkt#C++ Primer ', about: null },
   //   { coursecCode: 'TNM088', name: 'Digitala medier', preCourse: '', literature: '', about: null },
   //   { coursecCode: 'TNA002', name: 'Linjär algebra', preCourse: 'TNA001', literature: 'Linjär algebra TNA002', about: null },
@@ -19,7 +29,7 @@ const CourseMap = () => {
     { coursecCode: 'TNM040', name: 'Komunikation och användargränssnitt', preCourse: 'TNMK30', literature: '', about: null },
     { coursecCode: 'TNA007', name: 'Vektoranalys', preCourse: 'TNA002, TNA003, TNA004, TNA006', literature: 'Vektoranalys', about: null },
     { coursecCode: 'TNG033', name: 'Programmering i C++', preCourse: 'TND012, TND002', literature: 'C++ direkt#Professional C++#C++ Primer#Matematisk analys, en variabel', about: null },
-    { coursecCode: 'TNG032', name: 'Tillämpad transformteori', preCourse: 'TNA002, TNA003, TNA004', literature: 'Fourier and Laplace Transforms', about: null },
+    { coursecCode: 'TNG032', name: 'Tillämpad transformteori', preCourse: 'TNA002, TNA003, TNA004', literature: 'Fourier and Laplace Transforms', about: null }
     // { coursecCode: 'TNM059', name: 'Grafisk teknik', preCourse: 'TNA002', literature: '', about: null },
     // { coursecCode: 'TNM061', name: '3-D Datorgrafik', preCourse: 'TNM046', literature: '', about: null },
     // { coursecCode: 'TNG006', name: 'Matematisk statistik', preCourse: 'TNA006', literature: 'Sannolikhetsteori och statistikteori med tillämpningar#Problemsamling för kursen TNG006#Formelsamling i matematisk statistik', about: null },
@@ -67,13 +77,6 @@ const CourseMap = () => {
     // { coursecCode: 'TDDE02', name: 'Mjukvarutekniskt entreprenörskap', preCourse: 'TNG033, TNM046, TNG015, TNM040, TNM031, TNM096', literature: '', about: null },
     // { coursecCode: 'TNCG13', name: 'SFX - Tricks of the trade', preCourse: 'TNCG15', literature: '', about: null }
   ]
-
-  const Total = styled.div`
-  padding-left: 10px;
-  width: 100vw;
-  overflow: auto;
-  display: flex;
-`
 
   return (
     <Total>
