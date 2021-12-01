@@ -5,7 +5,6 @@ import Progressbar from './Progressbar'
 import styled from 'styled-components'
 import Calendar from './Calendar'
 import CourseMap from './CourseMap'
-// import Statistics from './Statistics'
 import Exmap from './Exmap'
 
 const Timer = styled.a`
@@ -19,6 +18,7 @@ const Timer = styled.a`
   vertical-align: middle;
   line-height: 20px;
   text-decoration: none;
+  align-items: center;
 `
 
 const Content = styled.div`
@@ -28,10 +28,11 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
   box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
 `
+
+// align-items: center;
 
 const Head = styled.div`
   height: 20vh;
@@ -51,11 +52,16 @@ const Courses = styled.div`
   overflow: auto;
   display: flex;
 `
-
+// test
 const Exstyle = styled.div`
 padding: 15px; 
 margin-bottom: 35px; 
 margin-left: 20px;
+`
+
+const Text = styled.div`
+font-size: 20px; 
+text-align: left; 
 `
 
 
@@ -69,16 +75,15 @@ const Dashboard = () => {
 
       <Content>
 
-        {/* <Statistics /> */}
-
-        <h1>Nuvarande kurser</h1>
+        <Text> Nuvarande kurser</Text>
         <Courses>
           <CourseMap />
         </Courses>
 
-      <Exstyle> 
-          <Exmap></Exmap>
-      </Exstyle>
+        <Text> Nästa examination</Text>
+        <Exstyle> 
+           <Exmap></Exmap>
+         </Exstyle>
 
         <Timer href='pomodoro'>
           <h2>TIMER</h2>

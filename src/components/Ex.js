@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Ex = ({ courseCode, courseName, courseType, courseDate, courseTime }) => {
-
+// test
 const Box = styled.div`
     height: 40px;
     width: 140px;

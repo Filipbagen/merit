@@ -1,7 +1,7 @@
 import React from 'react'
 import Ex from './Ex'
 import styled from 'styled-components'
-
+// test
 const CourseMap = () => {
     const examData = [{ examCourse: 'Vektoranalys', type: 'KTR3', date: '2021-12-15', time: '8:00-10:00' },
       { examCourse: 'Analys |||', type: 'TEN1', date: '2022-01-08', time: '8:00-13:00' },
