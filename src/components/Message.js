@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const Heading = styled.h1`
   font-family: 'Barlow', sans-serif;
   position: absolute;
-  margin: 35px 10px;
+  margin: 15px 10px;
   font-size: 43px;
 `
 
