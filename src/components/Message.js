@@ -4,7 +4,8 @@ import styled from 'styled-components'
 
 const Heading = styled.h1`
   font-family: 'Barlow', sans-serif;
-  margin: 35px 10px;
+  padding: 30px 50px;
+  margin: 0;
   font-size: 43px;
 `
 

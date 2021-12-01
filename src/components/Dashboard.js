@@ -9,15 +9,29 @@ import Exmap from './Exmap'
 // import Background from './Background'
 
 const Content = styled.div`
-  min-height: 80vh;
+{
+  min-height: 50vh;
+  top: 55px;
+  position: relative;
   background-color: white;
-  border-radius: 44px 44px 0px 0px;
+  border-radius: 44px 0 0 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
+}
+&:after {
+  content: "";
+  position: absolute;
+  top: -70px;
+  right: 0;
+  height: 70px;
+  width: 70px;
+  border-bottom-right-radius: 50%;
+  box-shadow: 0 35px 0 0 #fff;
+}
 `
 
 const Timer = styled.a`
@@ -45,7 +59,6 @@ const Container = styled.div`
   overflow-x: hidden;
   min-height: 100vh;
   background-color: #d7c0d0;
-  justify-content: space-evenly;
 `
 
 const Courses = styled.div`
@@ -69,9 +82,6 @@ padding-left: 20px;
 text-decoration: underline;
 font-family: Barlow;
 align-self: flex-start;
-`
-const Quote = styled.div`
-
 `
 
 const Dashboard = () => {
@@ -98,9 +108,7 @@ const Dashboard = () => {
 
         <Progressbar />
 
-        <Quote>
-          <Quotes />
-        </Quote>
+        <Quotes />
 
       </Content>
     </Container>

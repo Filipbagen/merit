@@ -9,7 +9,6 @@ const Circle = styled.div`
   border-radius: 50px;
   width: 50px;
   height: 50px;
-  margin-left: 20px;
   background-color: ${props => props.color};
   font-family: "Barlow", sans-serif;
   font-size: 16px;
@@ -18,26 +17,30 @@ const Circle = styled.div`
 
 const Week = styled.div`
   display: flex;
+  justify-content: space-evenly;
+  max-width: 430px;
+  justify-constent: space-evenly;
+  align-items: center;
 `
 
 const weekdays = ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör']
 
 const Calendar = () => {
-  const day = (new Date()).getDay()
   let today = new Date()
 
   const data = []
 
+  console.log(new Date(today.getTime() + 24 * 60 * 60 * 1000))
+
   for (let i = 0; i < 5; i++) {
-    today = new Date(today.getTime() + 24 * 60 * 60 * 1000)
+    today = new Date(today.getTime() + (24 * 60 * 60 * 1000) * i)
     data.push({ title: weekdays[today.getDay()], date: today.getDate(), isToday: i === 0 })
-    // console.log(today)
+    console.log(data[i])
   }
 
-  console.log(day === 3 ? 'white' : 'red')
   return (
     <Week>
-      {data.map(item => <Circle color={data.isToday ? 'red' : 'white'} key={data.date}> {item.title} <br />{item.date} </Circle>)}
+      {data.map((item, index) => <Circle color={data[index].isToday ? '#ED6519' : 'white'} key={data.date}> {item.title} <br />{item.date} </Circle>)}
     </Week>
   )
 }
