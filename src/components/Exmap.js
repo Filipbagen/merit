@@ -15,6 +15,7 @@ const CourseMap = () => {
   display: flex;
 `
 
+
   return (
     <Total>
       {examData.map(course => <Ex courseCode={course.examCourse} courseName={course.name} courseType={course.type} courseDate={course.date} courseTime={course.time} key={course.examCourse} />)}

@@ -16,13 +16,17 @@ const Course = ({ courseCode, courseName }) => {
 
   const Name = styled.div`
     text-align: left; 
+    font-size: 15px;
+    font-family: Barlow;
     
 `
 
   const Code = styled.div`
     width: 120px;
     text-align: left;
-    font-weight: bold: 
+    font-size: 25px;
+    font-weight: bold:
+    font-family: Barlow;
 `
 
   const detailedPath = '/merit/' + courseCode

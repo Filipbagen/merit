@@ -16,23 +16,27 @@ const Box = styled.div`
 
 const Name = styled.div`
     text-align: left; 
-    font-size: 18px;
+    font-size: 24px;
+    font-weight: bold:
 `
 const Code = styled.div`
     width: 120px;
     text-align: left;
-    font-size: 12px;
+    font-size: 14px;
+    font-family: Barlow;
 `
 const Type = styled.div`
     width: 120px;
     text-align: left;
-    font-size: 12px;
+    font-size: 14px;
+    font-family: Barlow;
 `
 const Date = styled.div`
     width: 120px;
     text-align: left; 
-    color: orange; 
-    font-size: 12px;
+    color: #ed6519; 
+    font-size: 14px;
+    font-family: Barlow;
 `
     return (
         <Box>

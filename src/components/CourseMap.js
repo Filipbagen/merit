@@ -15,7 +15,7 @@ const CourseMap = () => {
     { coursecCode: 'TNM046', name: 'Datorgrafik', preCourse: 'TND012, TNA002, TND002', literature: '', about: null },
     { coursecCode: 'TNA006', name: 'Analys III', preCourse: 'TNA004, TNA003, TNA001', literature: 'Matematisk analys : flera variabler#Problemsamling för kursen TNA006', about: null },
     { coursecCode: 'TNE043', name: 'Mekanik och vågfysik', preCourse: 'TNA002, TNA003, TNA004', literature: 'Principles of physics#Experimentell problemlösning', about: null },
-    { coursecCode: 'TNM040', name: 'Kaboutmunikation och användargränssnitt', preCourse: 'TNMK30', literature: '', about: null },
+    { coursecCode: 'TNM040', name: 'Komunikation och användargränssnitt', preCourse: 'TNMK30', literature: '', about: null },
     { coursecCode: 'TNA007', name: 'Vektoranalys', preCourse: 'TNA002, TNA003, TNA004, TNA006', literature: 'Vektoranalys', about: null },
     { coursecCode: 'TNG033', name: 'Programmering i C++', preCourse: 'TND012, TND002', literature: 'C++ direkt#Professional C++#C++ Primer#Matematisk analys, en variabel', about: null },
     { coursecCode: 'TNG032', name: 'Tillämpad transformteori', preCourse: 'TNA002, TNA003, TNA004', literature: 'Fourier and Laplace Transforms', about: null },
