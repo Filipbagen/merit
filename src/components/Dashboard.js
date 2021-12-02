@@ -13,7 +13,7 @@ const Content = styled.div`
   top: 15px;
   position: relative;
   background-color: white;
-  border-radius: 44px 0 0 0;
+  border-radius: 44px 0 0px 0px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -52,6 +52,7 @@ const Container = styled.div`
   overflow-x: hidden;
   min-height: 100vh;
   background-color: #d7c0d0;
+  justify-content: space-evenly;
 `
 
 const Courses = styled.div`
@@ -75,6 +76,9 @@ padding-left: 20px;
 text-decoration: underline;
 font-family: Barlow;
 align-self: flex-start;
+`
+const Quote = styled.div`
+
 `
 
 const Dashboard = () => {
@@ -100,7 +104,9 @@ const Dashboard = () => {
 
         <Progressbar />
 
-        <Quotes />
+        <Quote>
+          <Quotes />
+        </Quote>
 
       </Content>
     </Container>

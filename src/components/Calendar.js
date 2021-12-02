@@ -9,6 +9,7 @@ const Circle = styled.div`
   border-radius: 50px;
   width: 50px;
   height: 50px;
+  margin-left: 20px;
   background-color: ${props => props.color};
   font-family: "Barlow", sans-serif;
   font-size: 16px;
@@ -27,6 +28,7 @@ const Week = styled.div`
 const weekdays = ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör']
 
 const Calendar = () => {
+  const day = (new Date()).getDay()
   let today = new Date()
 
   const data = []
@@ -37,6 +39,7 @@ const Calendar = () => {
     data.push({ title: weekdays[today.getDay()], date: today.getDate(), isToday: false })
   }
 
+  console.log(day === 3 ? 'white' : 'red')
   return (
     <Week>
       {data.map((item) => (
