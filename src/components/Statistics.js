@@ -8,12 +8,17 @@ import { v4 as uuidv4 } from 'uuid'
 
 const moduleTypes = ['TEN1', 'DAT1', 'KTR1', 'KTR2', 'KTR3', 'PRA1']
 
-const Statistics = ({ courseCode }) => {
-  const Loader = styled.div`
-    display: flex;
-    justify-constent: center;
+const Loader = styled.div`
+padding-left: 10px;
+min-width: 100vw;
+overflow: auto;
+display: flex;
+&::-webkit-scrollbar {
+  display: none;
+}
 `
 
+const Statistics = ({ courseCode }) => {
   const [data, setData] = useState([])
 
   const fetchStatics = async () => {
@@ -30,7 +35,7 @@ const Statistics = ({ courseCode }) => {
       resData = await res.json()
       index++
       if (index > moduleTypes.length) {
-        window.alert('Ingen data hittades')
+        window.alert('Ingen statistik hittades')
         break
       }
       // console.log(resData)
@@ -50,7 +55,7 @@ const Statistics = ({ courseCode }) => {
   return (
     <Loader>
       {data.length === 0 && <PropagateLoader color='#ED6519' loading size={20} />}
-      {data.slice(0, 3).map(item => <Chart data={item} key={item.id} />)}
+      {data.slice(0, 5).map(item => <Chart data={item} key={item.id} />)}
     </Loader>
   )
 }

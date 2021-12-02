@@ -62,7 +62,7 @@ const Text = styled.div`
   color: black;
 `
 
-const Vector = styled.svg`
+const Vector = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;

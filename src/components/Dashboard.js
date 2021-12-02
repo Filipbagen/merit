@@ -10,8 +10,7 @@ import Exmap from './Exmap'
 
 const Content = styled.div`
 {
-  min-height: 50vh;
-  top: 55px;
+  top: 15px;
   position: relative;
   background-color: white;
   border-radius: 44px 0 0 0;
@@ -25,12 +24,12 @@ const Content = styled.div`
 &:after {
   content: "";
   position: absolute;
-  top: -70px;
+  top: -100px;
   right: 0;
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 100px;
   border-bottom-right-radius: 50%;
-  box-shadow: 0 35px 0 0 #fff;
+  box-shadow: 0 50px 0 0 #fff;
 }
 `
 
@@ -46,16 +45,10 @@ const Timer = styled.a`
   line-height: 20px;
   text-decoration: none;
   margin: 20px;
-  
-`
-
-const Head = styled.div`
-  height: 20vh;
-  width; 100vw;
 `
 
 const Container = styled.div`
-  max-width: 100vw;
+  min-width: 100vw;
   overflow-x: hidden;
   min-height: 100vh;
   background-color: #d7c0d0;
@@ -87,10 +80,9 @@ align-self: flex-start;
 const Dashboard = () => {
   return (
     <Container>
-      <Head>
-        <Message />
-        <Calendar />
-      </Head>
+
+      <Message />
+      <Calendar />
 
       <Content>
         <Text>Nuvarande kurser</Text>

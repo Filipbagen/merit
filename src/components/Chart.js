@@ -2,7 +2,9 @@ import { PieChart } from 'react-minimal-pie-chart'
 import styled from 'styled-components'
 
 const Diagram = styled.div`
-  height: 200px;
+  height: 100px;
+  margin: 10px;
+  width: 100vw;
 `
 
 const colors = ['#3B484F', '#ED6519', 'red', 'blue']
@@ -14,7 +16,7 @@ const Chart = ({ data }) => {
 
   return (
     <Diagram>
-      <PieChart data={pieData} />
+      <PieChart data={pieData} animate animationDuration={500} animationEasing='ease-in' lineWidth={55} paddingAngle={2} />
     </Diagram>
   )
 }

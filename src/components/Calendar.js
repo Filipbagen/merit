@@ -21,6 +21,7 @@ const Week = styled.div`
   max-width: 430px;
   justify-constent: space-evenly;
   align-items: center;
+  padding: 10px 0;
 `
 
 const weekdays = ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör']

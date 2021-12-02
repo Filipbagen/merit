@@ -12,7 +12,6 @@ display: flex;
 const Text = styled.div`
 font-size: 23px; 
 text-align: left; 
-padding-top: 30px;
 padding-bottom: 10px;
 padding-left: 20px;
 text-decoration: underline;
