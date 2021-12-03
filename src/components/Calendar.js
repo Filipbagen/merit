@@ -9,7 +9,6 @@ const Circle = styled.div`
   border-radius: 50px;
   width: 50px;
   height: 50px;
-  margin-left: 20px;
   background-color: ${props => props.color};
   font-family: "Barlow", sans-serif;
   font-size: 16px;
@@ -20,8 +19,6 @@ const Week = styled.div`
   display: flex;
   justify-content: space-evenly;
   max-width: 430px;
-  justify-constent: space-evenly;
-  align-items: center;
   padding: 10px 0;
 `
 

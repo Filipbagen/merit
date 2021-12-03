@@ -4,9 +4,10 @@ import styled from 'styled-components'
 
 const Heading = styled.h1`
   font-family: 'Barlow', sans-serif;
-  padding: 0x 20px;
+  padding: 15px 30px 10px 30px;
   margin: 25px 20px;
   font-size: 36px;
+  margin: 0;
 `
 
 class App extends React.Component {

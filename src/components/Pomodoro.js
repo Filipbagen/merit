@@ -65,13 +65,20 @@ const Text = styled.div`
 const Vector = styled.div`
   position: absolute;
   bottom: 0;
-  right: 0;
-  left: 0;
   width: 100vw;
   background-color: #12293b;
   height: 100px;
-  border-radius: 20px 20px 0px 0px;
-  z-indez: -1;
+  border-radius: 44px 0 0 0;
+  &:after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0 50px 0 0 #12293b;
+  }
 `
 
 const Back = styled.a`
@@ -171,23 +178,24 @@ const Pomodoro = () => {
             )}
       </PlayContainer>
 
-      <Vector />
-
-      <Drawer>
-        <TimerButts
-          onClick={() => {
-            setSeconds(25 * 60)
-            setDisplayMessage(false)
-            setIsRunning(false)
-            setPaused(true)
+      <Vector>
+        <Drawer>
+          <TimerButts
+            onClick={() => {
+              setSeconds(25 * 60)
+              setDisplayMessage(false)
+              setIsRunning(false)
+              setPaused(true)
             // colChange.style.color = "#000000";
-          }}
-        >
-          <BsArrowRepeat />
-        </TimerButts>
+            }}
+          >
+            <BsArrowRepeat />
+          </TimerButts>
 
-        {/* <TimerButts onClick={() => setSeconds(7)}>Ställ in</TimerButts> */}
-      </Drawer>
+          {/* <TimerButts onClick={() => setSeconds(7)}>Ställ in</TimerButts> */}
+        </Drawer>
+      </Vector>
+
     </AllButts>
   )
 }

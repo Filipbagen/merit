@@ -3,7 +3,6 @@ import Course from './Course'
 import styled from 'styled-components'
 
 const Total = styled.div`
-padding-left: 10px;
 width: 100vw;
 overflow: auto;
 display: flex;

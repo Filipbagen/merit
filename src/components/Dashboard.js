@@ -11,9 +11,10 @@ import Exmap from './Exmap'
 const Content = styled.div`
 {
   top: 15px;
+  min-height: 80vh;
   position: relative;
   background-color: white;
-  border-radius: 44px 0 0px 0px;
+  border-radius: 44px 0 0 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -49,14 +50,12 @@ const Timer = styled.a`
 
 const Container = styled.div`
   min-width: 100vw;
-  overflow-x: hidden;
   min-height: 100vh;
   background-color: #d7c0d0;
   justify-content: space-evenly;
 `
 
 const Courses = styled.div`
-  padding-left: 10px;
   width: 100vw;
   overflow: auto;
   display: flex;
