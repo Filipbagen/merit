@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Box = styled.div`
-height: 130px;
-width: 130px;
+height: 120px;
+width: 120px;
 margin: 16px;
 padding: 20px;
 box-shadow: 0px 0px 15px rgba(33, 33, 33, 0.2);

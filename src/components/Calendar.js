@@ -25,7 +25,6 @@ const Week = styled.div`
 const weekdays = ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör']
 
 const Calendar = () => {
-  const day = (new Date()).getDay()
   let today = new Date()
 
   const data = []
@@ -36,7 +35,6 @@ const Calendar = () => {
     data.push({ title: weekdays[today.getDay()], date: today.getDate(), isToday: false })
   }
 
-  console.log(day === 3 ? 'white' : 'red')
   return (
     <Week>
       {data.map((item) => (

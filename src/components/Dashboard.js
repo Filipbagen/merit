@@ -1,11 +1,11 @@
-import React from "react";
-import Message from "./Message";
-import Quotes from "./Quotes";
-import Progressbar from "./Progressbar";
-import styled from "styled-components";
-import Calendar from "./Calendar";
-import CourseMap from "./CourseMap";
-import Exmap from "./Exmap";
+import React from 'react'
+import Message from './Message'
+import Quotes from './Quotes'
+import Progressbar from './Progressbar'
+import styled from 'styled-components'
+import Calendar from './Calendar'
+import CourseMap from './CourseMap'
+import Exmap from './Exmap'
 // import Background from './Background'
 
 const Content = styled.div`
@@ -32,7 +32,7 @@ const Content = styled.div`
     border-bottom-right-radius: 50%;
     box-shadow: 0 50px 0 0 #fff;
   }
-`;
+`
 
 const Timer = styled.a`
   border-radius: 10px;
@@ -46,20 +46,20 @@ const Timer = styled.a`
   line-height: 20px;
   text-decoration: none;
   margin: 20px;
-`;
+`
 
 const Container = styled.div`
   min-width: 100vw;
   min-height: 100vh;
   background-color: #d7c0d0;
   justify-content: space-evenly;
-`;
+`
 
 const Courses = styled.div`
   width: 100vw;
   overflow: auto;
   display: flex;
-`;
+`
 
 const Text = styled.p`
   font-size: 23px;
@@ -68,8 +68,8 @@ const Text = styled.p`
   align-self: flex-start;
   color: rgb(60, 60, 60);
   margin: 35px 0px 0px;
-`;
-const Quote = styled.div``;
+`
+const Quote = styled.div``
 
 const Dashboard = () => {
   return (
@@ -85,7 +85,7 @@ const Dashboard = () => {
 
         <Exmap />
 
-        <Timer href="pomodoro">
+        <Timer href='pomodoro'>
           <h2>POMODORO</h2>
         </Timer>
 
@@ -96,7 +96,7 @@ const Dashboard = () => {
         </Quote>
       </Content>
     </Container>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard
