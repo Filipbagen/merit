@@ -60,21 +60,14 @@ const Courses = styled.div`
   overflow: auto;
   display: flex;
 `
-const Exstyle = styled.div`
-padding: 15px; 
-margin-bottom: 80px; 
-margin-left: 10px;
-height: 45px;
-`
-const Text = styled.div`
+
+const Text = styled.p`
 font-size: 23px; 
-text-align: left; 
-padding-top: 30px;
-padding-bottom: 10px;
-padding-left: 20px;
-text-decoration: underline;
+padding: 0 0 0 20px;
 font-family: Barlow;
 align-self: flex-start;
+color: rgb(60, 60, 60);
+margin: 35px 0px 0px;
 `
 const Quote = styled.div`
 
@@ -93,9 +86,9 @@ const Dashboard = () => {
           <CourseMap />
         </Courses>
 
-        <Exstyle>
-          <Exmap />
-        </Exstyle>
+
+        <Exmap />
+
 
         <Timer href='pomodoro'>
           <h2>TIMER</h2>

@@ -1,29 +1,60 @@
-import React from "react";
-import "./index-progressbar.css";
+import React from 'react'
+import styled from 'styled-components'
+
+const PercentNumber = styled.div`
+  font-size: 23px;
+  font-family: Barlow;
+  color: rgb(60, 60, 60);
+  padding-bottom: 16px;
+`
+
+const Container = styled.div`
+  border-radius: 12px;
+  -webkit-box-shadow: 2px 2px 8px 5px rgba(0,0,0,0.08); 
+  box-shadow: 2px 2px 8px 5px rgba(0,0,0,0.08);
+  height: 35px;
+  width: 80vw;
+  max-width: 460pt;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+`
+
+const ProgressBar = styled.div`
+  position: absolute;
+  height: 35px;
+  max-width: 100%;
+  background-color: #ED6519;
+  -webkit-box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.12); 
+  box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.12);
+  transform-origin: 0% 100%;
+  transition: .8s ease;
+  transition-delay: .1s;
+`
 
 const Progressbar = () => {
-  const startDate = new Date("09/09/2020");
-  const endDate = new Date("06/06/2025");
-  const totDays = (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24);
+  const startDate = new Date('09/09/2020')
+  const endDate = new Date('06/06/2025')
+  const totDays = (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
 
-  const compleated = Math.floor((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
-  const percentageDiff = (compleated / totDays).toFixed(2) * 100;
+  const compleated = Math.floor((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24))
+  const percentageDiff = (compleated / totDays).toFixed(2) * 100
 
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0)
   React.useEffect(() => {
-    setValue(percentageDiff);
-  }, [percentageDiff]);
+    setValue(percentageDiff)
+  }, [percentageDiff])
 
   return (
     <div>
-      <h3 className="percent-number" style={{ fontSize: "23px", fontFamily: "Barlow", textDecoration: "underline" }}>
+      <PercentNumber>
         Klart av MT: {percentageDiff}%
-      </h3>
-      <div className="progress-div">
-        <div style={{ width: `${value}%` }} className="progress" />
-      </div>
+      </PercentNumber>
+      <Container>
+        <ProgressBar style={{ width: `${value}%` }} />
+      </Container>
     </div>
-  );
-};
+  )
+}
 
-export default Progressbar;
+export default Progressbar

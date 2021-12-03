@@ -3,18 +3,14 @@ import Ex from './Ex'
 import styled from 'styled-components'
 
 const Total = styled.div`
-padding-left: 10px;
 overflow: auto;
 display: flex;
 `
 
-const Text = styled.div`
+const Text = styled.p`
 font-size: 23px; 
-text-align: left; 
-padding-bottom: 10px;
-padding-left: 20px;
-text-decoration: underline;
 font-family: Barlow;
+color: rgb(60, 60, 60);
 `
 
 const examData = [{ courseCode: 'TNA007', courseName: 'Vektoranalys', type: 'KTR3', date: '2021-12-15', time: '8:00-10:00' },

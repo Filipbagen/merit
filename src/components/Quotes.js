@@ -1,7 +1,7 @@
 import data from '../quotes.json'
 import styled from 'styled-components'
 
-const Quote = styled.h2`
+const Quote = styled.h3`
     font-family: 'Barlow', sans-serif;
     margin: 20pt 15pt;
     display: flex;
