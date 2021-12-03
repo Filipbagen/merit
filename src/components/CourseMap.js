@@ -11,6 +11,15 @@ display: flex;
 }
 `
 
+const Text = styled.p`
+  font-size: 23px;
+  padding: 0 0 0 20px;
+  font-family: Barlow;
+  align-self: flex-start;
+  color: rgb(60, 60, 60);
+  margin: 35px 0px 0px;
+`
+
 const CourseMap = () => {
   const courseData = [
     // { coursecCode: 'TNA001', name: 'Matematisk grundkurs', preCourse: '', literature: 'Matematisk analys, en variabel', about: null },
@@ -78,9 +87,12 @@ const CourseMap = () => {
   ]
 
   return (
-    <Total>
-      {courseData.map(course => <Course courseCode={course.coursecCode} courseName={course.name} key={course.coursecCode} />)}
-    </Total>
+    <div>
+      <Text>Nuvarande kurser</Text>
+      <Total>
+        {courseData.map(course => <Course courseCode={course.coursecCode} courseName={course.name} key={course.coursecCode} />)}
+      </Total>
+    </div>
   )
 }
 

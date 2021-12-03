@@ -8,6 +8,13 @@ import CourseMap from './CourseMap'
 import Exmap from './Exmap'
 // import Background from './Background'
 
+const Container = styled.div`
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #d7c0d0;
+  justify-content: space-evenly;
+`
+
 const Content = styled.div`
    {
     top: 15px;
@@ -48,28 +55,11 @@ const Timer = styled.a`
   margin: 20px;
 `
 
-const Container = styled.div`
-  min-width: 100vw;
-  min-height: 100vh;
-  background-color: #d7c0d0;
-  justify-content: space-evenly;
-`
-
-const Courses = styled.div`
+const Overflow = styled.div`
   width: 100vw;
   overflow: auto;
   display: flex;
 `
-
-const Text = styled.p`
-  font-size: 23px;
-  padding: 0 0 0 20px;
-  font-family: Barlow;
-  align-self: flex-start;
-  color: rgb(60, 60, 60);
-  margin: 35px 0px 0px;
-`
-const Quote = styled.div``
 
 const Dashboard = () => {
   return (
@@ -78,12 +68,14 @@ const Dashboard = () => {
       <Calendar />
 
       <Content>
-        <Text>Nuvarande kurser</Text>
-        <Courses>
-          <CourseMap />
-        </Courses>
 
-        <Exmap />
+        <Overflow>
+          <CourseMap />
+        </Overflow>
+
+        <Overflow>
+          <Exmap courseCode='all' />
+        </Overflow>
 
         <Timer href='pomodoro'>
           <h2>POMODORO</h2>
@@ -91,9 +83,7 @@ const Dashboard = () => {
 
         <Progressbar />
 
-        <Quote>
-          <Quotes />
-        </Quote>
+        <Quotes />
       </Content>
     </Container>
   )
