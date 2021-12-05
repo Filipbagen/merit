@@ -9,8 +9,8 @@ const Circle = styled.div`
   border-radius: 50px;
   width: 50px;
   height: 50px;
-  background-color: ${props => props.color};
-  font-family: "Barlow", sans-serif;
+  background-color: ${(props) => props.color};
+  font-family: 'Barlow', sans-serif;
   font-size: 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
@@ -38,10 +38,10 @@ const Calendar = () => {
   return (
     <Week>
       {data.map((item) => (
-        <Circle color={item.isToday ? '#ED6519' : 'white'} key={item.date}>
+        <Circle href={'/schedule/' + item.date} color={item.isToday ? '#ED6519' : 'white'} key={item.date}>
           {' '}
           {item.title} <br />
-          {item.date}{' '}
+          {item.date}
         </Circle>
       ))}
     </Week>
