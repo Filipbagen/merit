@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Circle = styled.div`
   display: flex;
@@ -28,20 +29,37 @@ const Calendar = () => {
   let today = new Date()
 
   const data = []
-  data.push({ title: weekdays[today.getDay()], date: today.getDate(), isToday: true })
+  data.push({
+    title: weekdays[today.getDay()],
+    date: ('0' + today.getDate()).slice(-2),
+    isToday: true,
+    year: today.getFullYear(),
+    month: today.getMonth(),
+  })
 
   for (let i = 0; i < 4; i++) {
     today = new Date(today.getTime() + 24 * 60 * 60 * 1000)
-    data.push({ title: weekdays[today.getDay()], date: today.getDate(), isToday: false })
+    data.push({
+      title: weekdays[today.getDay()],
+      date: ('0' + today.getDate()).slice(-2),
+      isToday: false,
+      year: today.getFullYear(),
+      month: today.getMonth(),
+    })
   }
 
   return (
     <Week>
       {data.map((item) => (
-        <Circle href={'/schedule/' + item.date} color={item.isToday ? '#ED6519' : 'white'} key={item.date}>
-          {' '}
-          {item.title} <br />
-          {item.date}
+        <Circle color={item.isToday ? '#ED6519' : 'white'} key={item.date}>
+          <Link
+            to={'/schedule/' + item.year + '-' + item.month + '-' + item.date}
+            style={{ textDecoration: 'none', color: 'black' }}
+          >
+            {' '}
+            {item.title} <br />
+            {item.date}
+          </Link>
         </Circle>
       ))}
     </Week>

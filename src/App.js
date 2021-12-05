@@ -16,7 +16,7 @@ const App = () => {
       <Routes>
         <Route path='/pomodoro/' element={<Pomodoro />} />
 
-        <Route path='/schedule/:Startdatum' element={<Schedule />} />
+        <Route path='/schedule/:date' element={<Schedule />} />
 
         <Route path='/' element={<Dashboard />} />
 

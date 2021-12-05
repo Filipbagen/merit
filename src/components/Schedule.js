@@ -12,13 +12,18 @@ const LectureBlock = styled.div`
 `
 
 const Schedule = () => {
-  const { date } = useParams()
-
+  const { prop } = useParams()
+  const match = []
+  for (let i = 0; i < mt2b.length(); i++) {
+    if (mt2b[i].Startdatum === prop) {
+      match.push(mt2b[i])
+    }
+  }
   console.log(mt2b[0])
 
   return (
     <div>
-      {mt2b.map((item) => (
+      {match.map((item) => (
         <LectureBlock key={item.Startdatum}>
           {item.Kurs} <br />
           {item.Starttid} {' - '}
