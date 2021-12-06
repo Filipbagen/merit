@@ -1,40 +1,59 @@
 import React from 'react'
-import mt2b from 'C:/Users/olive/Documents/GitHub/merit/src/data/mt2b.json'
+import mt2b from '../data/mt2b.json'
 import { useParams } from 'react-router'
 import styled from 'styled-components'
-import img from '../svg/blobs.svg'
+import Calendar from './Calendar'
+import { BiArrowBack } from 'react-icons/bi'
 
-const Wrapper = styled.div`
-  background-image: url(${img});
-  width: 100vw;
-  margin: 0;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
+const Container = styled.div`
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #d7c0d0;
+  justify-content: space-evenly;
+`
+
+const Content = styled.div`
+{
+  top: 15px;
+  min-height: 80vh;
+  position: relative;
+  background-color: white;
+  border-radius: 44px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+&:after {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  border-bottom-right-radius: 50%;
+  box-shadow: 0 50px 0 0 #fff;
+}
 `
 
 const LectureBlock = styled.div`
   background-color: white;
   box-shadow: 0px 0px 15px rgb(33 33 33 / 20%);
   font-family: 'Barlow', sans-serif;
-  margin: 5px;
   border-radius: 10px;
-  margin-bottom: 25px;
+  width: 70vw;
+  max-width: 400px;
 `
 const Kurs = styled.h2`
-  margin: 0;
-  margin-left: 10px;
-  font-size: 35px;
+
 `
-const Tid = styled.p`
-  margin: 0;
-  margin-left: 10px;
-  font-size: 27px;
+const Time = styled.p`
+
 `
-const Lokal = styled.p`
-  margin: 0;
-  margin-left: 10px;
-  font-size: 25px;
+const Lokal = styled.h2`
+
 `
 const Headline = styled.h1`
   font-family: 'Barlow', sans-serif;
@@ -44,8 +63,22 @@ const Headline = styled.h1`
   margin-top: 0px;
 `
 
+const Back = styled.a`
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black;
+`
+
+const TopRow = styled.a`
+  display: flex;
+  justify-content: space-around;
+`
+
+const months = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
+
 const Schedule = () => {
-  let { id } = useParams()
+  const { id } = useParams()
   const match = []
   for (let i = 0; i < mt2b.length; i++) {
     if (id === mt2b[i].Startdatum) {
@@ -55,24 +88,25 @@ const Schedule = () => {
   console.log(mt2b[0])
 
   return (
-    <Wrapper>
-      <Headline>Schema för: {id}</Headline>
-      {match.map((item) => (
-        <LectureBlock key={item.Startdatum}>
-          <Kurs>{item.Kurs} </Kurs>
-          <br />
-          <Tid>
-            {item.Starttid} {' - '}
-            {item.Sluttid} <br />
-          </Tid>
-          <br></br>
-          <Lokal>
-            {item.Lokal} <br />
-          </Lokal>
-          <br></br>
-        </LectureBlock>
-      ))}
-    </Wrapper>
+    <Container>
+      <Back href='/'>
+        <BiArrowBack size={50} />
+      </Back>
+      <Calendar />
+
+      <Content>
+        <Headline>Schema för {id.split('-')[2] < 10 ? id.split('-')[2].substring(1) : id.split('-')[2]} {months[id.split('-')[1] - 1]}</Headline>
+        {match.map((item) => (
+          <LectureBlock key={item.Starttid}>
+            <TopRow>
+              <Kurs>{item.Kurs}</Kurs>
+              <Lokal>{item.Lokal ? item.Lokal : 'Distans'}</Lokal>
+            </TopRow>
+            <Time>{item.Starttid} - {item.Sluttid} <br /></Time>
+          </LectureBlock>
+        ))}
+      </Content>
+    </Container>
   )
 }
 
