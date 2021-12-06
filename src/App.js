@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Dashboard from './components/Dashboard'
 import CourseDetails from './components/CourseDetails'
 import Schedule from './components/Schedule'
+import Calendar from './components/Calendar'
 
 // För att rendera din komponent, lägg till en länk i Dashboard.js
 // och lägg till en route likt nedan.
@@ -16,7 +17,7 @@ const App = () => {
       <Routes>
         <Route path='/pomodoro/' element={<Pomodoro />} />
 
-        <Route path='/schedule/:date' element={<Schedule />} />
+        <Route path='/schedule/:id' element={<Schedule />} />
 
         <Route path='/' element={<Dashboard />} />
 

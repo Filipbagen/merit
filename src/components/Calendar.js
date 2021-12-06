@@ -27,14 +27,14 @@ const weekdays = ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör']
 
 const Calendar = () => {
   let today = new Date()
-
+  console.log(today.getMonth())
   const data = []
   data.push({
     title: weekdays[today.getDay()],
     date: ('0' + today.getDate()).slice(-2),
     isToday: true,
     year: today.getFullYear(),
-    month: today.getMonth(),
+    month: today.getMonth() + 1,
   })
 
   for (let i = 0; i < 4; i++) {
@@ -44,7 +44,7 @@ const Calendar = () => {
       date: ('0' + today.getDate()).slice(-2),
       isToday: false,
       year: today.getFullYear(),
-      month: today.getMonth(),
+      month: today.getMonth() + 1,
     })
   }
 
