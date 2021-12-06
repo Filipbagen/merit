@@ -30,7 +30,7 @@ const Content = styled.div`
     align-items: center;
   }
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: -100px;
     right: 0;
