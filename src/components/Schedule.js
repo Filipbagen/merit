@@ -76,6 +76,11 @@ const TopRow = styled.a`
   justify-content: space-around;
 `
 
+const Free = styled.h1`
+  padding-top: 24px;
+  font-family: Barlow;
+`
+
 const months = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
 
 const Schedule = () => {
@@ -97,7 +102,7 @@ const Schedule = () => {
 
       <Content>
         {match.length === 0
-          ? <h1>Du är schemafri</h1>
+          ? <Free>Du är schemafri</Free>
           : match.map((item) => (
             <LectureBlock key={item.Starttid}>
               <TopRow>
