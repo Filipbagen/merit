@@ -4,6 +4,17 @@ import { PropagateLoader } from 'react-spinners'
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
 
+const ColorCode = styled.div`
+  border-radius: 50px;
+  width: 10px;
+  height: 10px;
+`
+const ColorCont = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+`
+
 // array med alla modules
 const moduleTypes = ['TEN1', 'DAT1', 'KTR1', 'KTR2', 'KTR3', 'PRA1']
 
@@ -39,7 +50,7 @@ const Statistics = ({ courseCode }) => {
       const res = await window.fetch(url)
       resData = await res.json()
       index++
-      console.log(data)
+
       if (index > moduleTypes.length) {
         window.alert('Ingen statistik hittades')
         break
@@ -47,9 +58,10 @@ const Statistics = ({ courseCode }) => {
       console.log(resData)
     } while (resData.length === 0)
 
-    setData(resData.map(item => {
-      return { ...item, id: uuidv4() }
-    })
+    setData(
+      resData.map((item) => {
+        return { ...item, id: uuidv4() }
+      })
     )
   }
 
@@ -60,9 +72,25 @@ const Statistics = ({ courseCode }) => {
   return (
     <div>
       <Text>Tentastatistik</Text>
+      <ColorCont>
+        <ColorCode style={{ backgroundColor: '#ED6519' }}>
+          <h3>U</h3>
+        </ColorCode>
+        <ColorCode style={{ backgroundColor: '#3B484F' }}>
+          <h3>3</h3>
+        </ColorCode>
+        <ColorCode style={{ backgroundColor: '#C4C4C4' }}>
+          <h3>4</h3>
+        </ColorCode>
+        <ColorCode style={{ backgroundColor: '#F5AD85' }}>
+          <h3>5</h3>
+        </ColorCode>
+      </ColorCont>
       <Loader>
         {data.length === 0 && <PropagateLoader color='#ED6519' loading size={20} />}
-        {data.slice(0, 2).map(item => <Chart data={item} key={item.id} />)}
+        {data.slice(0, 2).map((item) => (
+          <Chart data={item} key={item.id} />
+        ))}
       </Loader>
     </div>
   )
