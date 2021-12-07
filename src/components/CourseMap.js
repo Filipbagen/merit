@@ -17,7 +17,7 @@ const Text = styled.p`
   font-family: Barlow;
   align-self: flex-start;
   color: rgb(60, 60, 60);
-  margin: 35px 0px 0px;
+  margin: 35px 10px 0;
 `
 
 const CourseMap = () => {
