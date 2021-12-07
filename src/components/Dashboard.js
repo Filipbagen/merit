@@ -53,7 +53,7 @@ const Timer = styled.a`
   vertical-align: middle;
   line-height: 20px;
   text-decoration: none;
-  margin: 20px;
+  margin: 25px;
 `
 
 const Overflow = styled.div`
@@ -69,7 +69,6 @@ const Dashboard = () => {
       <Calendar />
 
       <Content>
-
         <Overflow>
           <CourseMap />
         </Overflow>

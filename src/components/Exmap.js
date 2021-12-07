@@ -13,11 +13,12 @@ const Total = styled.div`
 
 const Text = styled.p`
   font-size: 23px;
-  padding: 0 0 0 20px;
   font-family: Barlow;
   align-self: flex-start;
   color: rgb(60, 60, 60);
-  margin: 35px 0px 0px;
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 0;
 `
 
 const examData = [{ courseCode: 'TNA007', courseName: 'Vektoranalys', type: 'KTR3', date: '15 December', time: '8:00-10:00', key: '1' },
