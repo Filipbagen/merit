@@ -53,7 +53,7 @@ const Chart = ({ data }) => {
             fontFamily: 'Barlow',
           })}
           radius={42}
-          labelPosition={85}
+          labelPosition={70}
         />
       </Diagram>
     </div>
