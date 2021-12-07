@@ -6,7 +6,7 @@ import styled from 'styled-components'
 // width: 100vw;
 
 const Diagram = styled.div`
-  height: 250px;
+  height: 220px;
 `
 // U, 3, 4, 5
 const colors = ['#3B484F', '#ED6519', '#C4C4C4', '#F5AD85']
@@ -39,21 +39,27 @@ const Chart = ({ data }) => {
   // animate animationDuration={500} animationEasing='ease-in' paddingAngle={2}
   // (labelRenderProps) => string | number | ReactElement
 
-  // console.log(data)
+  console.log(data)
 
   return (
     <div>
+      <h3>{data.moduleCode} - {JSON.stringify(data.examinationDate).slice(1, 11)}</h3>
       <Diagram>
         <PieChart
           data={pieData}
+          animate animationDuration={500}
+          animationEasing='ease-in'
+          paddingAngle={1}
+          color='white'
           lineWidth={55}
           label={({ dataEntry }) => ` ${Math.round(dataEntry.percentage)}% `}
           labelStyle={() => ({
-            fontSize: '7px',
+            fontSize: '8px',
             fontFamily: 'Barlow',
+            fill: 'black'
           })}
           radius={42}
-          labelPosition={70}
+          labelPosition={110}
         />
       </Diagram>
     </div>

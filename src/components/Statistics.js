@@ -15,15 +15,22 @@ const ColorCont = styled.div`
   margin-top: 10px;
 `
 
-// array med alla modules
-const moduleTypes = ['TEN1', 'DAT1', 'KTR1', 'KTR2', 'KTR3', 'PRA1']
-
 const Loader = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+const Charts = styled.div`
   width: 100vw;
   overflow: auto;
+  overflow-y: hidden;
   display: flex;
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  div {
+    flex-shrink: 0;
   }
 `
 
@@ -36,30 +43,29 @@ const Text = styled.p`
   margin: 35px 0px 0px;
 `
 
+// array med alla modules
+const moduleTypes = ['TEN1', 'DAT1', 'KTR1', 'KTR2', 'KTR3', 'PRA1']
+
 const Statistics = ({ courseCode }) => {
   const [data, setData] = useState([])
 
   const fetchStatics = async () => {
-    let resData = []
-    let index = 0
-
-    do {
+    let statistics = []
+    console.log('fetching')
+    for (const module of moduleTypes) {
+      // await window.alert(module)
       const url = new URL('https://liu-server.herokuapp.com/statistics')
-      const params = { course: courseCode, module: moduleTypes[index] }
+      const params = { course: courseCode, module: module }
       url.search = new URLSearchParams(params).toString()
       const res = await window.fetch(url)
-      resData = await res.json()
-      index++
+      const resData = await res.json()
+      statistics = [...statistics, ...resData]
+    }
 
-      if (index > moduleTypes.length) {
-        window.alert('Ingen statistik hittades')
-        break
-      }
-      console.log(resData)
-    } while (resData.length === 0)
+    console.log(statistics)
 
     setData(
-      resData.map((item) => {
+      statistics.map((item) => {
         return { ...item, id: uuidv4() }
       })
     )
@@ -67,11 +73,19 @@ const Statistics = ({ courseCode }) => {
 
   useEffect(() => {
     fetchStatics()
-  })
+  }, [])
 
   return (
     <div>
+      {/* <Text>{JSON.stringify(data)}</Text> */}
       <Text>Tentastatistik</Text>
+
+      <Charts>
+        {data.slice(0, 60).map(item => (
+          <Chart data={item} key={item.id} />
+        ))}
+      </Charts>
+
       <ColorCont>
         <ColorCode style={{ backgroundColor: '#ED6519' }}>
           <h3>U</h3>
@@ -86,14 +100,16 @@ const Statistics = ({ courseCode }) => {
           <h3>5</h3>
         </ColorCode>
       </ColorCont>
+
       <Loader>
         {data.length === 0 && <PropagateLoader color='#ED6519' loading size={20} />}
-        {data.slice(0, 2).map((item) => (
-          <Chart data={item} key={item.id} />
-        ))}
+        {/* {<PropagateLoader color='#ED6519' loading size={20} /> && } */}
       </Loader>
+
     </div>
   )
 }
 
 export default Statistics
+
+// Quota exceeded
