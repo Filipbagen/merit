@@ -9,27 +9,31 @@ const Diagram = styled.div`
   height: 250px;
 `
 // U, 3, 4, 5
-const colors = ['#f9e0e6', '#ED6519', '#e0f1f2', '#dbebf9']
+const colors = ['#3B484F', '#ED6519', '#C4C4C4', '#F5AD85']
 let color = ''
 
 const Chart = ({ data }) => {
   const pieData = data.grades.map((grade, i) => {
     switch (grade.grade) {
-      case '5': color = colors[0]
+      case '5':
+        color = colors[3]
         break
 
-      case '4': color = colors[1]
+      case '4':
+        color = colors[2]
         break
 
-      case '3': color = colors[2]
+      case '3':
+        color = colors[0]
         break
 
-      case 'U': color = colors[3]
+      case 'U':
+        color = colors[1]
         break
 
       default:
     }
-    return ({ title: grade.grade, value: grade.quantity, color: color })
+    return { title: grade.grade, value: grade.quantity, color: color }
   })
 
   // animate animationDuration={500} animationEasing='ease-in' paddingAngle={2}
@@ -38,19 +42,21 @@ const Chart = ({ data }) => {
   // console.log(data)
 
   return (
-    <Diagram>
-      <PieChart
-        data={pieData}
-        lineWidth={55}
-        label={({ dataEntry }) => `${Math.round(dataEntry.percentage)}% ${dataEntry.value}`}
-        labelStyle={() => ({
-          fontSize: '5px',
-          fontFamily: 'Barlow'
-        })}
-        radius={42}
-        labelPosition={100}
-      />
-    </Diagram>
+    <div>
+      <Diagram>
+        <PieChart
+          data={pieData}
+          lineWidth={55}
+          label={({ dataEntry }) => ` ${Math.round(dataEntry.percentage)}% `}
+          labelStyle={() => ({
+            fontSize: '7px',
+            fontFamily: 'Barlow',
+          })}
+          radius={42}
+          labelPosition={85}
+        />
+      </Diagram>
+    </div>
   )
 }
 
