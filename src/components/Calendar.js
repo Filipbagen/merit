@@ -33,7 +33,8 @@ const Calendar = () => {
     date: ('0' + today.getDate()).slice(-2),
     isToday: true,
     year: today.getFullYear(),
-    month: today.getMonth() + 1
+    month: today.getMonth() + 1,
+    trueDate: today.getDate()
   })
 
   for (let i = 0; i < 4; i++) {
@@ -43,7 +44,8 @@ const Calendar = () => {
       date: ('0' + today.getDate()).slice(-2),
       isToday: false,
       year: today.getFullYear(),
-      month: today.getMonth() + 1
+      month: today.getMonth() + 1,
+      trueDate: today.getDate()
     })
   }
 
@@ -57,7 +59,7 @@ const Calendar = () => {
           >
             {' '}
             {item.title} <br />
-            {item.date}
+            {item.trueDate}
           </Link>
         </Circle>
       ))}

@@ -78,6 +78,7 @@ const Vector = styled.div`
     width: 100px;
     border-bottom-right-radius: 50%;
     box-shadow: 0 50px 0 0 #12293b;
+    pointer-events: none;
   }
 `
 
