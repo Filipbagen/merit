@@ -52,7 +52,7 @@ const Text = styled.p`
   font-family: 'Barlow', sans-serif;
   font-size: 36px;
   text-align: center;
-  padding: 40px 0;
+  padding: 48px 0;
 `
 
 const CourseDetails = () => {

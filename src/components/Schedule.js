@@ -21,7 +21,6 @@ const Content = styled.div`
   border-radius: 44px 0 0 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
@@ -46,6 +45,7 @@ const LectureBlock = styled.div`
   border-radius: 10px;
   width: 70vw;
   max-width: 400px;
+  margin-top: 60px;
 `
 const Kurs = styled.h2`
 
@@ -59,6 +59,9 @@ const Lokal = styled.h2`
 const Headline = styled.h1`
   font-family: 'Barlow', sans-serif;
   font-size: 25px;
+  text-align: center;
+  margin: 0;
+  padding: 18px 0 20px;
 `
 
 const Back = styled.a`
@@ -89,10 +92,10 @@ const Schedule = () => {
       <Back href='/'>
         <BiArrowBack size={50} />
       </Back>
+      <Headline>Schema för {id.split('-')[2] < 10 ? id.split('-')[2].substring(1) : id.split('-')[2]} {months[id.split('-')[1] - 1]}</Headline>
       <Calendar />
 
       <Content>
-        <Headline>Schema för {id.split('-')[2] < 10 ? id.split('-')[2].substring(1) : id.split('-')[2]} {months[id.split('-')[1] - 1]}</Headline>
         {match.length === 0
           ? <h1>Du är schemafri</h1>
           : match.map((item) => (
