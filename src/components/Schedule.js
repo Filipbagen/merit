@@ -58,10 +58,7 @@ const Lokal = styled.h2`
 `
 const Headline = styled.h1`
   font-family: 'Barlow', sans-serif;
-  margin: 5px;
   font-size: 25px;
-  margin-bottom: 100px;
-  margin-top: 0px;
 `
 
 const Back = styled.a`
@@ -86,7 +83,6 @@ const Schedule = () => {
       match.push(mt2b[i])
     }
   }
-  console.log(mt2b[0])
 
   return (
     <Container>
@@ -97,15 +93,18 @@ const Schedule = () => {
 
       <Content>
         <Headline>Schema för {id.split('-')[2] < 10 ? id.split('-')[2].substring(1) : id.split('-')[2]} {months[id.split('-')[1] - 1]}</Headline>
-        {match.map((item) => (
-          <LectureBlock key={item.Starttid}>
-            <TopRow>
-              <Kurs>{item.Kurs}</Kurs>
-              <Lokal>{item.Lokal ? item.Lokal : 'Distans'}</Lokal>
-            </TopRow>
-            <Time>{item.Starttid} - {item.Sluttid} <br /></Time>
-          </LectureBlock>
-        ))}
+        {match.length === 0
+          ? <h1>Du är schemafri</h1>
+          : match.map((item) => (
+            <LectureBlock key={item.Starttid}>
+              <TopRow>
+                <Kurs>{item.Kurs}</Kurs>
+                <Lokal>{item.Lokal ? item.Lokal : 'Distans'}</Lokal>
+              </TopRow>
+              <Time>{item.Starttid} - {item.Sluttid}</Time>
+            </LectureBlock>
+          ))}
+
       </Content>
     </Container>
   )
