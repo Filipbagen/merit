@@ -13,6 +13,7 @@ const ColorCont = styled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 10px;
+  width: 80vw;
 `
 
 const Loader = styled.div`
@@ -28,7 +29,6 @@ const Charts = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-
   div {
     flex-shrink: 0;
   }
@@ -62,7 +62,7 @@ const Statistics = ({ courseCode }) => {
       statistics = [...statistics, ...resData]
     }
 
-    console.log(statistics)
+    // console.log(statistics)
 
     setData(
       statistics.map((item) => {
@@ -86,24 +86,23 @@ const Statistics = ({ courseCode }) => {
         ))}
       </Charts>
 
-      <ColorCont>
-        <ColorCode style={{ backgroundColor: '#ED6519' }}>
-          <h3>U</h3>
-        </ColorCode>
-        <ColorCode style={{ backgroundColor: '#3B484F' }}>
-          <h3>3</h3>
-        </ColorCode>
-        <ColorCode style={{ backgroundColor: '#C4C4C4' }}>
-          <h3>4</h3>
-        </ColorCode>
-        <ColorCode style={{ backgroundColor: '#F5AD85' }}>
-          <h3>5</h3>
-        </ColorCode>
-      </ColorCont>
-
       <Loader>
         {data.length === 0 && <PropagateLoader color='#ED6519' loading size={20} />}
-        {/* {<PropagateLoader color='#ED6519' loading size={20} /> && } */}
+        {data.length !== 0 && (
+          <ColorCont>
+            <ColorCode style={{ backgroundColor: '#ED6519' }}>
+              <h3>U</h3>
+            </ColorCode>
+            <ColorCode style={{ backgroundColor: '#3B484F' }}>
+              <h3>3</h3>
+            </ColorCode>
+            <ColorCode style={{ backgroundColor: '#C4C4C4' }}>
+              <h3>4</h3>
+            </ColorCode>
+            <ColorCode style={{ backgroundColor: '#F5AD85' }}>
+              <h3>5</h3>
+            </ColorCode>
+          </ColorCont>)}
       </Loader>
 
     </div>

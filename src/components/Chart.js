@@ -39,7 +39,7 @@ const Chart = ({ data }) => {
   // animate animationDuration={500} animationEasing='ease-in' paddingAngle={2}
   // (labelRenderProps) => string | number | ReactElement
 
-  console.log(data)
+  // console.log(data)
 
   return (
     <div>
