@@ -33,12 +33,10 @@ const TimerButts = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: #f6f6f6;
   width: 40vw;
   height: 60px;
   border-radius: 10px;
-
   font-size: 24px;
 `
 
