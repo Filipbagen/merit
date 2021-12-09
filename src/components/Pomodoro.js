@@ -2,7 +2,7 @@ import { useState } from 'react'
 import useInterval from '../misc/useInterval'
 import styled from 'styled-components'
 import { BsPlayCircle, BsPauseCircle, BsArrowRepeat } from 'react-icons/bs'
-import { BiArrowBack } from 'react-icons/bi'
+import BackBtn from './BackBtn'
 
 const AllButts = styled.div`
   min-height: 100vh;
@@ -80,13 +80,6 @@ const Vector = styled.div`
   }
 `
 
-const Back = styled.a`
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: black;
-`
-
 // Component
 const Pomodoro = () => {
   // var colChange = document.querySelector(".Clock");
@@ -134,9 +127,7 @@ const Pomodoro = () => {
 
   return (
     <AllButts>
-      <Back href='/'>
-        <BiArrowBack size={50} />
-      </Back>
+      <BackBtn />
 
       <Clock className='Clock'>
         {message

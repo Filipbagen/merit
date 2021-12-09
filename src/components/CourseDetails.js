@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useParams } from 'react-router'
 import Statistics from './Statistics'
 import Exmap from './Exmap'
-import { BiArrowBack } from 'react-icons/bi'
+import BackBtn from './BackBtn'
 // import Background from './Background'
 
 const Container = styled.div`
@@ -39,13 +39,13 @@ const Content = styled.div`
 }
 `
 
-const Back = styled.a`
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: black;
-  margin: 0;
-`
+// const Back = styled.a`
+//   position: absolute;
+//   top: 20px;
+//   left: 20px;
+//   color: black;
+//   margin: 0;
+// `
 
 const Text = styled.p`
   margin: 0;
@@ -60,9 +60,7 @@ const CourseDetails = () => {
 
   return (
     <Container>
-      <Back href='/'>
-        <BiArrowBack size={50} />
-      </Back>
+      <BackBtn />
       <Text>{courseCode}</Text>
 
       <Content>

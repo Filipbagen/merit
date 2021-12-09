@@ -3,7 +3,7 @@ import mt2b from '../data/mt2b.json'
 import { useParams } from 'react-router'
 import styled from 'styled-components'
 import Calendar from './Calendar'
-import { BiArrowBack } from 'react-icons/bi'
+import BackBtn from './BackBtn'
 
 const Container = styled.div`
   min-width: 100vw;
@@ -95,13 +95,6 @@ const Headline = styled.h1`
   padding: 18px 0 20px;
 `
 
-const Back = styled.a`
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: black;
-`
-
 const TopRow = styled.a`
   display: flex;
   justify-content: space-between;
@@ -125,9 +118,7 @@ const Schedule = () => {
 
   return (
     <Container>
-      <Back href='/'>
-        <BiArrowBack size={50} />
-      </Back>
+      <BackBtn />
       <Headline>Schema för {id.split('-')[2] < 10 ? id.split('-')[2].substring(1) : id.split('-')[2]} {months[id.split('-')[1] - 1]}</Headline>
       <Calendar />
 

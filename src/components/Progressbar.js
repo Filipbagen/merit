@@ -29,8 +29,6 @@ const ProgressBar = styled.div`
   transition: .8s ease;
   transition-delay: .1s;
 `
-// -webkit-box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.12);
-// box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.12);
 
 const Progressbar = () => {
   const startDate = new Date('09/09/2020')
