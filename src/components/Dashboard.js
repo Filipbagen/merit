@@ -78,7 +78,7 @@ const Dashboard = () => {
         </Overflow>
 
         <Timer href='pomodoro'>
-          <h2>PLUGG TIMER</h2>
+          <h2>PLUGGTIMER</h2>
         </Timer>
 
         <Progressbar />
