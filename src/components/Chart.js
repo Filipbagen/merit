@@ -8,12 +8,24 @@ import styled from 'styled-components'
 const Diagram = styled.div`
   height: 220px;
 `
-// U, 3, 4, 5
-const colors = ['#3B484F', '#ED6519', '#C4C4C4', '#F5AD85']
-let color = ''
 
+const Heading = styled.h3`
+  text-align: center;
+`
+
+// U, 3, 4, 5
+const grades = [
+  { color: '#3B484F', title: 'U' },
+  { color: '#ED6519', title: '3' },
+  { color: '#C4C4C4', title: '4' },
+  { color: '#F5AD85', title: '5' }
+]
+
+// ['#3B484F', '#ED6519', '#C4C4C4', '#F5AD85']
+const colors = grades.map((grade) => grade.color)
+let color = ''
 const Chart = ({ data }) => {
-  const pieData = data.grades.map((grade, i) => {
+  const pieData = data.grades.map((grade) => {
     switch (grade.grade) {
       case '5':
         color = colors[3]
@@ -24,11 +36,11 @@ const Chart = ({ data }) => {
         break
 
       case '3':
-        color = colors[0]
+        color = colors[1]
         break
 
       case 'U':
-        color = colors[1]
+        color = colors[0]
         break
 
       default:
@@ -43,7 +55,7 @@ const Chart = ({ data }) => {
 
   return (
     <div>
-      <h3>{data.moduleCode} - {JSON.stringify(data.examinationDate).slice(1, 11)}</h3>
+      <Heading>{data.moduleCode}</Heading>
       <Diagram>
         <PieChart
           data={pieData}
@@ -62,8 +74,10 @@ const Chart = ({ data }) => {
           labelPosition={110}
         />
       </Diagram>
+      <Heading>{JSON.stringify(data.examinationDate).slice(1, 11)}</Heading>
     </div>
   )
 }
 
+export { grades }
 export default Chart

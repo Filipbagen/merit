@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router'
 
 const Circle = styled.div`
   display: flex;
@@ -27,33 +28,31 @@ const weekdays = ['Sön', 'Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör']
 
 const Calendar = () => {
   let today = new Date()
-  const data = []
-  data.push({
-    title: weekdays[today.getDay()],
-    date: ('0' + today.getDate()).slice(-2),
-    isToday: true,
-    year: today.getFullYear(),
-    month: today.getMonth() + 1,
-    trueDate: today.getDate()
-  })
+  const { id } = useParams()
+  const selectedDay = Number(id ? id.split('-')[2] : today.getDate())
+  console.log(selectedDay)
+  // const [selectedDay, setSelectedDay] = useState(id ? id.split('-')[2] : today.getDate())
+  // console.log(today.getDate())
 
-  for (let i = 0; i < 4; i++) {
-    today = new Date(today.getTime() + 24 * 60 * 60 * 1000)
+  const data = []
+
+  for (let i = 0; i < 5; i++) {
     data.push({
       title: weekdays[today.getDay()],
       date: ('0' + today.getDate()).slice(-2),
-      isToday: false,
       year: today.getFullYear(),
       month: today.getMonth() + 1,
       trueDate: today.getDate()
     })
+    today = new Date(today.getTime() + 24 * 60 * 60 * 1000)
   }
 
   return (
     <Week>
-      {data.map((item) => (
-        <Circle color={item.isToday ? '#ED6519' : 'white'} key={item.date}>
+      {data.map((item, i) => (
+        <Circle color={selectedDay === item.trueDate ? '#ED6519' : 'white'} key={item.date}>
           <Link
+            // onClick={() => setSelectedDay(i)}
             to={'/schedule/' + item.year + '-' + item.month + '-' + item.date}
             style={{ textDecoration: 'none', color: 'black' }}
           >

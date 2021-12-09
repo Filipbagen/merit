@@ -89,10 +89,10 @@ const Teacher = styled.p`
 
 const Headline = styled.h1`
   font-family: 'Barlow', sans-serif;
-  font-size: 25px;
+  font-size: 22px;
   text-align: center;
   margin: 0;
-  padding: 18px 0 20px;
+  padding: 32px 0 20px;
 `
 
 const TopRow = styled.a`

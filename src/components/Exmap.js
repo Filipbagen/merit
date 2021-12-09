@@ -11,12 +11,19 @@ const Total = styled.div`
   }
 `
 
-const Text = styled.p`
+const Text = styled.h3`
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-family: Barlow;
+  margin-top: 20px;
+`
+
+const AltText = styled.p`
   font-size: 23px;
   font-family: Barlow;
   align-self: flex-start;
   color: rgb(60, 60, 60);
-  padding-left: 30px;
   margin-top: 10px;
   margin-bottom: 0;
 `
@@ -37,10 +44,17 @@ const Exmap = ({ courseCode }) => {
 
   return (
     <div>
-      <Text>Nästa examination</Text>
-      <Total>
-        {sortedExams.map(course => <Ex courseCode={course.courseCode} courseName={course.courseName} courseType={course.type} courseDate={course.date} courseTime={course.time} key={course.key} />)}
-      </Total>
+      <AltText>Nästa examination</AltText>
+      {sortedExams.length !== 0
+        ? (
+          <div>
+            <Total>
+              {sortedExams.map(course => <Ex courseCode={course.courseCode} courseName={course.courseName} courseType={course.type} courseDate={course.date} courseTime={course.time} key={course.key} />)}
+            </Total>
+          </div>
+          )
+        : <Text>Inga kommande examinationer finns</Text>}
+
     </div>
   )
 }

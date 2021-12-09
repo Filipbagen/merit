@@ -1,24 +1,29 @@
 import { useEffect, useState } from 'react'
-import Chart from './Chart'
+import Chart, { grades } from './Chart'
 import { PropagateLoader } from 'react-spinners'
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
 
-const ColorCode = styled.div`
+const Dot = styled.div`
   border-radius: 50px;
   width: 10px;
   height: 10px;
+  background-color: ${props => props.color};
 `
+
 const ColorCont = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-around;
   margin-top: 10px;
-  width: 80vw;
+  width: 100vw;
 `
 
 const Loader = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100px;
 `
 
 const Charts = styled.div`
@@ -79,31 +84,30 @@ const Statistics = ({ courseCode }) => {
     <div>
       {/* <Text>{JSON.stringify(data)}</Text> */}
       <Text>Tentastatistik</Text>
+      {data.length !== 0 && (
+        <ColorCont>
 
+          {grades.map(grade => {
+            return (
+              <div key={grade.title}>
+                <Dot color={grade.color} />
+                <h3>{grade.title}</h3>
+              </div>
+            )
+          })}
+        </ColorCont>
+      )}
       <Charts>
-        {data.slice(0, 60).map(item => (
+        {data.slice(0, 20).map(item => (
           <Chart data={item} key={item.id} />
         ))}
       </Charts>
 
-      <Loader>
-        {data.length === 0 && <PropagateLoader color='#ED6519' loading size={20} />}
-        {data.length !== 0 && (
-          <ColorCont>
-            <ColorCode style={{ backgroundColor: '#ED6519' }}>
-              <h3>U</h3>
-            </ColorCode>
-            <ColorCode style={{ backgroundColor: '#3B484F' }}>
-              <h3>3</h3>
-            </ColorCode>
-            <ColorCode style={{ backgroundColor: '#C4C4C4' }}>
-              <h3>4</h3>
-            </ColorCode>
-            <ColorCode style={{ backgroundColor: '#F5AD85' }}>
-              <h3>5</h3>
-            </ColorCode>
-          </ColorCont>)}
-      </Loader>
+      {data.length === 0 && (
+        <Loader>
+          <PropagateLoader color='#ED6519' loading size={20} />
+        </Loader>
+      )}
 
     </div>
   )

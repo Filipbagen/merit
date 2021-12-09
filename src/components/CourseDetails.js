@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import Statistics from './Statistics'
 import Exmap from './Exmap'
 import BackBtn from './BackBtn'
+import { courseData } from './CourseMap'
 // import Background from './Background'
 
 const Container = styled.div`
@@ -21,7 +22,6 @@ const Content = styled.div`
   border-radius: 44px 0 0 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
   align-items: center;
@@ -38,14 +38,6 @@ const Content = styled.div`
   pointer-events: none;
 }
 `
-
-// const Back = styled.a`
-//   position: absolute;
-//   top: 20px;
-//   left: 20px;
-//   color: black;
-//   margin: 0;
-// `
 
 const Text = styled.p`
   margin: 0;
@@ -66,6 +58,7 @@ const CourseDetails = () => {
       <Content>
         <Exmap courseCode={courseCode} />
         <Statistics courseCode={courseCode} />
+        <h2>{courseData[0].literature}</h2>
       </Content>
     </Container>
   )
