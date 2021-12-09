@@ -9,8 +9,9 @@ const Container = styled.div`
   min-width: 100vw;
   min-height: 100vh;
   background-color: #d7c0d0;
-  justify-content: space-evenly;
 `
+
+// justify-content: space-evenly;
 
 const Content = styled.div`
 {
@@ -39,23 +40,53 @@ const Content = styled.div`
 `
 
 const LectureBlock = styled.div`
+  position: relative;
   background-color: white;
   box-shadow: 0px 0px 15px rgb(33 33 33 / 20%);
   font-family: 'Barlow', sans-serif;
   border-radius: 10px;
   width: 70vw;
   max-width: 400px;
-  margin-top: 60px;
+  margin-top: 35px;
+  z-index: 1;
 `
-const Kurs = styled.h2`
+const Asset = styled.h3`
+  margin: 0;
+  padding: 10px;
+`
 
+const StartTime = styled.p`
+  margin: 0;
+  padding: 34px 20px 0 0px;
 `
-const Time = styled.p`
 
+const Time = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  &:after {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 3px;
+    border-radius: 50px;
+    background: #ED6519;
+    transform: translate(-50%, 55%);
+    margin-left: 20px;
+  }
 `
-const Lokal = styled.h2`
 
+const TimeTable = styled.div`
+  display: flex;
+  flex-direction: row;
 `
+
+const Teacher = styled.p`
+  margin: 0;
+  padding: 0 0 10px 10px;
+  font-style: italic;
+`
+
 const Headline = styled.h1`
   font-family: 'Barlow', sans-serif;
   font-size: 25px;
@@ -73,7 +104,7 @@ const Back = styled.a`
 
 const TopRow = styled.a`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 `
 
 const Free = styled.h1`
@@ -104,13 +135,28 @@ const Schedule = () => {
         {match.length === 0
           ? <Free>Du är schemafri</Free>
           : match.map((item) => (
-            <LectureBlock key={item.Starttid}>
-              <TopRow>
-                <Kurs>{item.Kurs}</Kurs>
-                <Lokal>{item.Lokal ? item.Lokal : 'Distans'}</Lokal>
-              </TopRow>
-              <Time>{item.Starttid} - {item.Sluttid}</Time>
-            </LectureBlock>
+            <TimeTable key={item.Starttid}>
+
+              <Time>
+                <StartTime>
+                  {item.Starttid}
+                </StartTime>
+
+                <StartTime>
+                  {item.Sluttid}
+                </StartTime>
+              </Time>
+
+              <LectureBlock>
+                <TopRow>
+                  <Asset>{item.Kurs}</Asset>
+                  <Asset>{item.Lokal ? item.Lokal : 'Distans'}</Asset>
+                </TopRow>
+                <Teacher>{item.Lärare}</Teacher>
+              </LectureBlock>
+
+            </TimeTable>
+
           ))}
 
       </Content>
