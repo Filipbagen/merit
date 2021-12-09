@@ -10,8 +10,8 @@ const PercentNumber = styled.div`
 
 const Container = styled.div`
   border-radius: 12px;
-  -webkit-box-shadow: 2px 2px 8px 5px rgba(0,0,0,0.08); 
-  box-shadow: 2px 2px 8px 5px rgba(0,0,0,0.08);
+  -webkit-box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.25), inset -3px -2px 4px rgba(200, 200, 200, 0.25);
+  box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.25), inset -3px -2px 4px rgba(200, 200, 200, 0.25);
   height: 35px;
   width: 80vw;
   max-width: 460pt;
@@ -25,12 +25,12 @@ const ProgressBar = styled.div`
   height: 35px;
   max-width: 100%;
   background-color: #ED6519;
-  -webkit-box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.12); 
-  box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.12);
   transform-origin: 0% 100%;
   transition: .8s ease;
   transition-delay: .1s;
 `
+// -webkit-box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.12);
+// box-shadow: 0px 0px 4px 6px rgba(0,0,0,0.12);
 
 const Progressbar = () => {
   const startDate = new Date('09/09/2020')
