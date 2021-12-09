@@ -8,7 +8,7 @@ const AllButts = styled.div`
   min-height: 100vh;
   min-width: 100vw;
 
-  font-family: "Barlow";
+  font-family: 'Barlow';
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +57,8 @@ const Clock = styled.div`
 `
 
 const Text = styled.div`
-  color: black;
+  color: #3b484f;
+  font-size: 30px;
 `
 
 const Vector = styled.div`
@@ -68,7 +69,7 @@ const Vector = styled.div`
   height: 100px;
   border-radius: 44px 0 0 0;
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: -100px;
     right: 0;
@@ -113,16 +114,10 @@ const Pomodoro = () => {
     isRunning ? delay : null
   )
 
-  const timerMinutes =
-    Math.floor(seconds / 60) < 10
-      ? '0' + Math.floor(seconds / 60)
-      : Math.floor(seconds / 60)
+  const timerMinutes = Math.floor(seconds / 60) < 10 ? '0' + Math.floor(seconds / 60) : Math.floor(seconds / 60)
   const timerSeconds = seconds % 60 < 10 ? '0' + (seconds % 60) : seconds % 60
 
-  const timerVilaMin =
-    Math.floor(vila / 60) < 10
-      ? '0' + Math.floor(vila / 60)
-      : Math.floor(vila / 60)
+  const timerVilaMin = Math.floor(vila / 60) < 10 ? '0' + Math.floor(vila / 60) : Math.floor(vila / 60)
   const timerVilaSec = vila % 60 < 10 ? '0' + (vila % 60) : vila % 60
 
   return (
@@ -130,42 +125,39 @@ const Pomodoro = () => {
       <BackBtn />
 
       <Clock className='Clock'>
-        {message
-          ? (
-            <p>
-              <Text>Vila</Text>
-              {timerVilaMin}:{timerVilaSec}
-            </p>
-            )
-          : (
-            <p>
-              {timerMinutes}:{timerSeconds}
-            </p>
-            )}
+        {message ? (
+          <p>
+            <Text>Vila</Text>
+            {timerVilaMin}:{timerVilaSec}
+          </p>
+        ) : (
+          <p>
+            <Text>Plugga</Text>
+            {timerMinutes}:{timerSeconds}
+          </p>
+        )}
       </Clock>
 
       <PlayContainer>
-        {paused
-          ? (
-            <Play
-              onClick={() => {
-                setIsRunning(true)
-                setPaused(false)
-              }}
-            >
-              <BsPlayCircle size={100} />
-            </Play>
-            )
-          : (
-            <Play
-              onClick={() => {
-                setIsRunning(false)
-                setPaused(true)
-              }}
-            >
-              <BsPauseCircle size={100} color='#ED6519' />
-            </Play>
-            )}
+        {paused ? (
+          <Play
+            onClick={() => {
+              setIsRunning(true)
+              setPaused(false)
+            }}
+          >
+            <BsPlayCircle size={100} />
+          </Play>
+        ) : (
+          <Play
+            onClick={() => {
+              setIsRunning(false)
+              setPaused(true)
+            }}
+          >
+            <BsPauseCircle size={100} color='#ED6519' />
+          </Play>
+        )}
       </PlayContainer>
 
       <Vector>
@@ -176,16 +168,15 @@ const Pomodoro = () => {
               setDisplayMessage(false)
               setIsRunning(false)
               setPaused(true)
-            // colChange.style.color = "#000000";
+              // colChange.style.color = "#000000";
             }}
           >
             <BsArrowRepeat />
           </TimerButts>
 
-          {/* <TimerButts onClick={() => setSeconds(7)}>Ställ in</TimerButts> */}
+          <TimerButts onClick={() => setSeconds(7)}>test</TimerButts>
         </Drawer>
       </Vector>
-
     </AllButts>
   )
 }

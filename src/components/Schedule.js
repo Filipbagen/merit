@@ -14,29 +14,29 @@ const Container = styled.div`
 // justify-content: space-evenly;
 
 const Content = styled.div`
-{
-  top: 15px;
-  min-height: 80vh;
-  position: relative;
-  background-color: white;
-  border-radius: 44px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
-  align-items: center;
-}
-&:after {
-  content: '';
-  position: absolute;
-  top: -100px;
-  right: 0;
-  height: 100px;
-  width: 100px;
-  border-bottom-right-radius: 50%;
-  box-shadow: 0 50px 0 0 #fff;
-  pointer-events: none;
-}
+   {
+    top: 15px;
+    min-height: 80vh;
+    position: relative;
+    background-color: white;
+    border-radius: 44px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0 50px 0 0 #fff;
+    pointer-events: none;
+  }
 `
 
 const LectureBlock = styled.div`
@@ -70,7 +70,7 @@ const Time = styled.div`
     height: 28px;
     width: 3px;
     border-radius: 50px;
-    background: #ED6519;
+    background: #ed6519;
     transform: translate(-50%, 55%);
     margin-left: 20px;
   }
@@ -105,7 +105,20 @@ const Free = styled.h1`
   font-family: Barlow;
 `
 
-const months = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December']
+const months = [
+  'Januari',
+  'Februari',
+  'Mars',
+  'April',
+  'Maj',
+  'Juni',
+  'Juli',
+  'Augusti',
+  'September',
+  'Oktober',
+  'November',
+  'December',
+]
 
 const Schedule = () => {
   const { id } = useParams()
@@ -119,23 +132,22 @@ const Schedule = () => {
   return (
     <Container>
       <BackBtn />
-      <Headline>Schema för {id.split('-')[2] < 10 ? id.split('-')[2].substring(1) : id.split('-')[2]} {months[id.split('-')[1] - 1]}</Headline>
+      <Headline>
+        Schema för {id.split('-')[2] < 10 ? id.split('-')[2].substring(1) : id.split('-')[2]}{' '}
+        {months[id.split('-')[1] - 1]}
+      </Headline>
       <Calendar />
 
       <Content>
-        {match.length === 0
-          ? <Free>Du är schemafri</Free>
-          : match.map((item) => (
+        {match.length === 0 ? (
+          <Free>Du är schemafri</Free>
+        ) : (
+          match.map((item) => (
             <TimeTable key={item.Starttid}>
-
               <Time>
-                <StartTime>
-                  {item.Starttid}
-                </StartTime>
+                <StartTime>{item.Starttid}</StartTime>
 
-                <StartTime>
-                  {item.Sluttid}
-                </StartTime>
+                <StartTime>{item.Sluttid}</StartTime>
               </Time>
 
               <LectureBlock>
@@ -143,13 +155,13 @@ const Schedule = () => {
                   <Asset>{item.Kurs}</Asset>
                   <Asset>{item.Lokal ? item.Lokal : 'Distans'}</Asset>
                 </TopRow>
-                <Teacher>{item.Lärare}</Teacher>
+                <Teacher>
+                  {item.Undervisningstyp}, {item.Lärare}
+                </Teacher>
               </LectureBlock>
-
             </TimeTable>
-
-          ))}
-
+          ))
+        )}
       </Content>
     </Container>
   )
