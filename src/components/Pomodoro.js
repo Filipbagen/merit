@@ -171,10 +171,10 @@ const Pomodoro = () => {
               // colChange.style.color = "#000000";
             }}
           >
-            <BsArrowRepeat />
+            Plugga
           </TimerButts>
 
-          <TimerButts onClick={() => setSeconds(7)}>test</TimerButts>
+          <TimerButts onClick={() => setSeconds(0)}>Vila</TimerButts>
         </Drawer>
       </Vector>
     </AllButts>
