@@ -24,6 +24,10 @@ const Text = styled.p`
   margin: 35px 0px 0px;
 `
 
+const AltText = styled.p`
+  margin-top: 10px;
+`
+
 // console.log(courseData)
 
 const Literature = ({ courseCode }) => {
@@ -37,10 +41,25 @@ const Literature = ({ courseCode }) => {
       <Text>Kurslitteratur</Text>
       <Container>
         <LiteratureHeading>Böcker</LiteratureHeading>
-        <Books>{books}</Books>
+        {books
+          ? (
+            <div>
+              <Books>{books}</Books>
+            </div>)
+          : (
+            <AltText>Inga böcker behövs för denna kurs</AltText>
+            )}
 
         <LiteratureHeading>Kompendier</LiteratureHeading>
-        <Books>{compendium}</Books>
+        {compendium
+          ? (
+            <div>
+              <Books>{compendium}</Books>
+            </div>)
+          : (
+            <AltText>Inga kompendier behövs för denna kurs</AltText>
+            )}
+
       </Container>
     </div>
   )

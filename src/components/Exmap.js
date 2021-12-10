@@ -14,7 +14,7 @@ const Total = styled.div`
 const Text = styled.h3`
   position: relative;
   z-index: 1;
-  text-align: center;
+  padding-left: 30px;
   font-family: Barlow;
   margin-top: 20px;
 `
