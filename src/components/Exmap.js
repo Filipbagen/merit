@@ -26,6 +26,7 @@ const AltText = styled.p`
   color: rgb(60, 60, 60);
   margin-top: 10px;
   margin-bottom: 0;
+  padding: 10px 0 0 30px;
 `
 
 const examData = [{ courseCode: 'TNA007', courseName: 'Vektoranalys', type: 'KTR3', date: '15 December', time: '8:00-10:00', key: '1' },

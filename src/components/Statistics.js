@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import Chart, { grades } from './Chart'
-import { PropagateLoader } from 'react-spinners'
+import { SquareLoader } from 'react-spinners'
 import styled from 'styled-components'
 import { v4 as uuidv4 } from 'uuid'
+import { css } from '@emotion/react'
 
 const Dot = styled.div`
   border-radius: 50px;
@@ -41,11 +42,15 @@ const Charts = styled.div`
 
 const Text = styled.p`
   font-size: 23px;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 30px;
   font-family: Barlow;
   align-self: flex-start;
   color: rgb(60, 60, 60);
   margin: 35px 0px 0px;
+`
+
+const override = css`
+  margin: 5px;
 `
 
 // array med alla modules
@@ -67,7 +72,7 @@ const Statistics = ({ courseCode }) => {
       statistics = [...statistics, ...resData]
     }
 
-    // console.log(statistics)
+    // console.log(statistics.sort((a, b) => (a.examina)))
 
     setData(
       statistics.map((item) => {
@@ -84,6 +89,13 @@ const Statistics = ({ courseCode }) => {
     <div>
       {/* <Text>{JSON.stringify(data)}</Text> */}
       <Text>Tentastatistik</Text>
+
+      <Charts>
+        {data.slice(0, 20).map(item => (
+          <Chart data={item} key={item.id} />
+        ))}
+      </Charts>
+
       {data.length !== 0 && (
         <ColorCont>
 
@@ -97,15 +109,11 @@ const Statistics = ({ courseCode }) => {
           })}
         </ColorCont>
       )}
-      <Charts>
-        {data.slice(0, 20).map(item => (
-          <Chart data={item} key={item.id} />
-        ))}
-      </Charts>
 
       {data.length === 0 && (
         <Loader>
-          <PropagateLoader color='#ED6519' loading size={20} />
+          <SquareLoader color='#ED6519' loading size={50} css={override} />
+          <SquareLoader color='#3B484F' loading size={50} css={override} />
         </Loader>
       )}
 

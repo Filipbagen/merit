@@ -117,7 +117,7 @@ const months = [
   'September',
   'Oktober',
   'November',
-  'December',
+  'December'
 ]
 
 const Schedule = () => {
@@ -139,29 +139,31 @@ const Schedule = () => {
       <Calendar />
 
       <Content>
-        {match.length === 0 ? (
-          <Free>Du är schemafri</Free>
-        ) : (
-          match.map((item) => (
-            <TimeTable key={item.Starttid}>
-              <Time>
-                <StartTime>{item.Starttid}</StartTime>
+        {match.length === 0
+          ? (
+            <Free>Du är schemafri 🎉</Free>
+            )
+          : (
+              match.map((item) => (
+                <TimeTable key={item.Starttid}>
+                  <Time>
+                    <StartTime>{item.Starttid}</StartTime>
 
-                <StartTime>{item.Sluttid}</StartTime>
-              </Time>
+                    <StartTime>{item.Sluttid}</StartTime>
+                  </Time>
 
-              <LectureBlock>
-                <TopRow>
-                  <Asset>{item.Kurs}</Asset>
-                  <Asset>{item.Lokal ? item.Lokal : 'Distans'}</Asset>
-                </TopRow>
-                <Teacher>
-                  {item.Undervisningstyp}, {item.Lärare}
-                </Teacher>
-              </LectureBlock>
-            </TimeTable>
-          ))
-        )}
+                  <LectureBlock>
+                    <TopRow>
+                      <Asset>{item.Kurs}</Asset>
+                      <Asset>{item.Lokal ? item.Lokal : 'Distans'}</Asset>
+                    </TopRow>
+                    <Teacher>
+                      {item.Undervisningstyp}, {item.Lärare}
+                    </Teacher>
+                  </LectureBlock>
+                </TimeTable>
+              ))
+            )}
       </Content>
     </Container>
   )
