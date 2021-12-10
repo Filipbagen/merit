@@ -7,7 +7,7 @@ import BackBtn from './BackBtn'
 const AllButts = styled.div`
   min-height: 100vh;
   min-width: 100vw;
-
+  background-color: white;
   font-family: 'Barlow';
   display: flex;
   flex-direction: column;
@@ -38,6 +38,7 @@ const TimerButts = styled.div`
   height: 60px;
   border-radius: 10px;
   font-size: 24px;
+  z-index: 2;
 `
 
 const PlayContainer = styled.div`
