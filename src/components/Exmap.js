@@ -39,8 +39,8 @@ const examData = [
     type: 'DAT1',
     date: '12 Januari',
     time: '8:00-13:00',
-    key: '4',
-  },
+    key: '4'
+  }
 ]
 
 let sortedExams = []
@@ -55,7 +55,8 @@ const Exmap = ({ courseCode }) => {
   return (
     <div>
       <AltText>Nästa examination</AltText>
-      {sortedExams.length !== 0 ? (
+      {sortedExams.length !== 0
+? (
         <div>
           <Total>
             {sortedExams.map((course) => (
@@ -70,7 +71,8 @@ const Exmap = ({ courseCode }) => {
             ))}
           </Total>
         </div>
-      ) : (
+      )
+: (
         <Text>Inga kommande examinationer finns</Text>
       )}
     </div>

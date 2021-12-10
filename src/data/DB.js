@@ -9,7 +9,7 @@ const courseData = [
   //   { coursecCode: 'TND002', name: 'Objektorienterad programmering', preCourse: 'TND012', literature: '', about: null },
   //   { coursecCode: 'TNA004', name: 'Analys II', preCourse: 'TNA003', literature: 'Matematisk analys, en variabel', about: null },
   //   { coursecCode: 'TNM046', name: 'Datorgrafik', preCourse: 'TND012, TNA002, TND002', literature: '', about: null },
-  { coursecCode: 'TNA006', name: 'Analys III', preCourse: 'TNA004, TNA003, TNA001', literature: 'Matematisk analys : flera variabler#Problemsamling för kursen TNA006', about: null },
+  { coursecCode: 'TNA006', name: 'Analys III', preCourse: 'TNA004, TNA003, TNA001', literature: 'Neymark, Mats, (2017) Matematisk analys: flera variabler#Problemsamling för kursen TNA006', about: null },
   { coursecCode: 'TNE043', name: 'Mekanik och vågfysik', preCourse: 'TNA002, TNA003, TNA004', literature: 'Principles of physics#Experimentell problemlösning', about: null },
   { coursecCode: 'TNM040', name: 'Komunikation och användargränssnitt', preCourse: 'TNMK30', literature: '', about: null },
   { coursecCode: 'TNA007', name: 'Vektoranalys', preCourse: 'TNA002, TNA003, TNA004, TNA006', literature: 'Vektoranalys', about: null },

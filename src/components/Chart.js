@@ -18,7 +18,7 @@ const grades = [
   { color: '#3B484F', title: 'U' },
   { color: '#ED6519', title: '3' },
   { color: '#C4C4C4', title: '4' },
-  { color: '#F5AD85', title: '5' }
+  { color: '#d7c0d0', title: '5' }
 ]
 
 // ['#3B484F', '#ED6519', '#C4C4C4', '#F5AD85']

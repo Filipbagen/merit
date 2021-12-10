@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import Statistics from './Statistics'
 import Exmap from './Exmap'
 import BackBtn from './BackBtn'
-import { courseData } from './CourseMap'
+import Literature from './Literature'
 // import Background from './Background'
 
 const Container = styled.div`
@@ -47,6 +47,8 @@ const Text = styled.p`
   padding: 48px 0;
 `
 
+// console.log(courseData)
+
 const CourseDetails = () => {
   const { courseCode } = useParams()
 
@@ -58,7 +60,9 @@ const CourseDetails = () => {
       <Content>
         <Exmap courseCode={courseCode} />
         <Statistics courseCode={courseCode} />
-        <h2>{courseData[0].literature}</h2>
+
+        <Literature courseCode={courseCode} />
+
       </Content>
     </Container>
   )
