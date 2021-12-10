@@ -24,7 +24,6 @@ const Content = styled.div`
   flex-direction: column;
   box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
-  align-items: center;
 }
 &:after {
   content: "";
