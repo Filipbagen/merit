@@ -11,8 +11,6 @@ const Container = styled.div`
   background-color: #d7c0d0;
 `
 
-// justify-content: space-evenly;
-
 const Content = styled.div`
    {
     top: 15px;
@@ -39,17 +37,6 @@ const Content = styled.div`
   }
 `
 
-const LectureBlock = styled.div`
-  position: relative;
-  background-color: white;
-  box-shadow: 0px 0px 15px rgb(33 33 33 / 20%);
-  font-family: 'Barlow', sans-serif;
-  border-radius: 10px;
-  width: 70vw;
-  max-width: 400px;
-  margin-top: 35px;
-  z-index: 1;
-`
 const Asset = styled.h3`
   margin: 0;
   padding: 10px;
@@ -120,6 +107,21 @@ const months = [
   'December'
 ]
 
+const LectureBlock = styled.div`
+  position: relative;
+  background-color: white;
+  box-shadow: 0px 0px 15px rgb(33 33 33 / 20%);
+  font-family: 'Barlow', sans-serif;
+  border-radius: 10px;
+  width: 70vw;
+  max-width: 400px;
+  margin-top: 35px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`
+
 const Schedule = () => {
   const { id } = useParams()
   const match = []
@@ -127,6 +129,20 @@ const Schedule = () => {
     if (id === mt2b[i].Startdatum) {
       match.push(mt2b[i])
     }
+  }
+
+  const removeZero = (number) => {
+    if (number.split()[0] === 0) {
+      return number.split()[1]
+    }
+    return number
+  }
+
+  const calculateHours = (block) => {
+    const startHour = removeZero(block.Starttid.slice(0, 2))
+    const endHour = removeZero(block.Sluttid.slice(0, 2))
+
+    return endHour - startHour
   }
 
   return (
@@ -147,19 +163,23 @@ const Schedule = () => {
               match.map((item) => (
                 <TimeTable key={item.Starttid}>
                   <Time>
+                    {/* style={{ height: calculateHours(item) >= 4 && '40px' }} */}
                     <StartTime>{item.Starttid}</StartTime>
 
                     <StartTime>{item.Sluttid}</StartTime>
                   </Time>
 
-                  <LectureBlock>
+                  <LectureBlock style={{ height: calculateHours(item) >= 4 && '140px' }}>
+
                     <TopRow>
                       <Asset>{item.Kurs}</Asset>
                       <Asset>{item.Lokal ? item.Lokal : 'Distans'}</Asset>
                     </TopRow>
+
                     <Teacher>
                       {item.Undervisningstyp}, {item.Lärare}
                     </Teacher>
+
                   </LectureBlock>
                 </TimeTable>
               ))
