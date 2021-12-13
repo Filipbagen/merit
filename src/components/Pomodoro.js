@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import useInterval from '../misc/useInterval'
 import styled from 'styled-components'
-import { BsPlayCircle, BsPauseCircle, BsArrowRepeat } from 'react-icons/bs'
+import { BsPlayCircle, BsPauseCircle } from 'react-icons/bs'
 import BackBtn from './BackBtn'
 
 const AllButts = styled.div`
@@ -126,39 +126,43 @@ const Pomodoro = () => {
       <BackBtn />
 
       <Clock className='Clock'>
-        {message ? (
-          <p>
-            <Text>Vila</Text>
-            {timerVilaMin}:{timerVilaSec}
-          </p>
-        ) : (
-          <p>
-            <Text>Plugga</Text>
-            {timerMinutes}:{timerSeconds}
-          </p>
-        )}
+        {message
+          ? (
+            <p>
+              <Text>Vila</Text>
+              {timerVilaMin}:{timerVilaSec}
+            </p>
+            )
+          : (
+            <p>
+              <Text>Plugga</Text>
+              {timerMinutes}:{timerSeconds}
+            </p>
+            )}
       </Clock>
 
       <PlayContainer>
-        {paused ? (
-          <Play
-            onClick={() => {
-              setIsRunning(true)
-              setPaused(false)
-            }}
-          >
-            <BsPlayCircle size={100} />
-          </Play>
-        ) : (
-          <Play
-            onClick={() => {
-              setIsRunning(false)
-              setPaused(true)
-            }}
-          >
-            <BsPauseCircle size={100} color='#ED6519' />
-          </Play>
-        )}
+        {paused
+          ? (
+            <Play
+              onClick={() => {
+                setIsRunning(true)
+                setPaused(false)
+              }}
+            >
+              <BsPlayCircle size={100} />
+            </Play>
+            )
+          : (
+            <Play
+              onClick={() => {
+                setIsRunning(false)
+                setPaused(true)
+              }}
+            >
+              <BsPauseCircle size={100} color='#ED6519' />
+            </Play>
+            )}
       </PlayContainer>
 
       <Vector>

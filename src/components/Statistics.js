@@ -59,29 +59,28 @@ const moduleTypes = ['TEN1', 'DAT1', 'KTR1', 'KTR2', 'KTR3', 'PRA1']
 const Statistics = ({ courseCode }) => {
   const [data, setData] = useState([])
 
-  const fetchStatics = async () => {
-    let statistics = []
-    console.log('fetching')
-    for (const module of moduleTypes) {
-      // await window.alert(module)
-      const url = new URL('https://liu-server.herokuapp.com/statistics')
-      const params = { course: courseCode, module: module }
-      url.search = new URLSearchParams(params).toString()
-      const res = await window.fetch(url)
-      const resData = await res.json()
-      statistics = [...statistics, ...resData]
-    }
-
-    // console.log(statistics.sort((a, b) => (a.examina)))
-
-    setData(
-      statistics.map((item) => {
-        return { ...item, id: uuidv4() }
-      })
-    )
-  }
-
   useEffect(() => {
+    const fetchStatics = async () => {
+      let statistics = []
+      console.log('fetching')
+      for (const module of moduleTypes) {
+        // await window.alert(module)
+        const url = new URL('https://liu-server.herokuapp.com/statistics')
+        const params = { course: courseCode, module: module }
+        url.search = new URLSearchParams(params).toString()
+        const res = await window.fetch(url)
+        const resData = await res.json()
+        statistics = [...statistics, ...resData]
+      }
+
+      // console.log(statistics.sort((a, b) => (a.examina)))
+
+      setData(
+        statistics.map((item) => {
+          return { ...item, id: uuidv4() }
+        })
+      )
+    }
     fetchStatics()
   }, [])
 

@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Content = styled.div`
    {
-    top: 15px;
+    top: 5px;
     min-height: 80vh;
     position: relative;
     background-color: white;
@@ -177,7 +177,7 @@ const Schedule = () => {
                     </TopRow>
 
                     <Teacher>
-                      {item.Undervisningstyp}, {item.Lärare}
+                      {item.Undervisningstyp} <br /> {item.Lärare}
                     </Teacher>
 
                   </LectureBlock>
