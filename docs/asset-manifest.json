@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/merit/static/css/main.106baaae.chunk.css",
-    "main.js": "/merit/static/js/main.06f32d7f.chunk.js",
-    "main.js.map": "/merit/static/js/main.06f32d7f.chunk.js.map",
+    "main.js": "/merit/static/js/main.f869a765.chunk.js",
+    "main.js.map": "/merit/static/js/main.f869a765.chunk.js.map",
     "runtime-main.js": "/merit/static/js/runtime-main.166f75e8.js",
     "runtime-main.js.map": "/merit/static/js/runtime-main.166f75e8.js.map",
     "static/js/2.d64db5a7.chunk.js": "/merit/static/js/2.d64db5a7.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.166f75e8.js",
     "static/js/2.d64db5a7.chunk.js",
     "static/css/main.106baaae.chunk.css",
-    "static/js/main.06f32d7f.chunk.js"
+    "static/js/main.f869a765.chunk.js"
   ]
 }
