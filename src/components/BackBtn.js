@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { BiChevronLeft } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 const Back = styled.a`
     position: absolute;
@@ -12,8 +13,10 @@ const Back = styled.a`
 
 const BackBtn = () => {
   return (
-    <Back href='/'>
-      <BiChevronLeft size={50} />
+    <Back>
+      <Link to='/merit/' style={{ color: 'black' }}>
+        <BiChevronLeft size={50} />
+      </Link>
     </Back>
   )
 }

@@ -53,7 +53,7 @@ const Calendar = () => {
         <Circle color={selectedDay === item.trueDate ? '#ED6519' : 'white'} key={item.date}>
           <Link
             // onClick={() => setSelectedDay(i)}
-            to={'/schedule/' + item.year + '-' + item.month + '-' + item.date}
+            to={'/merit/schedule/' + item.year + '-' + item.month + '-' + item.date}
             style={{ textDecoration: 'none', color: 'black' }}
           >
             {' '}

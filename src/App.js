@@ -24,9 +24,9 @@ const App = () => {
     <Background>
       <Router>
         <Routes>
-          <Route path='/pomodoro/' element={<Pomodoro />} />
+          <Route path='merit/pomodoro/' element={<Pomodoro />} />
 
-          <Route path='/schedule/:id' element={<Schedule />} />
+          <Route path='merit/schedule/:id' element={<Schedule />} />
 
           <Route path='/' element={<Dashboard />} />
 

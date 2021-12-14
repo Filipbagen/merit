@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Calendar from './Calendar'
 import CourseMap from './CourseMap'
 import Exmap from './Exmap'
+import { Link } from 'react-router-dom'
 // import Background from './Background'
 
 const Container = styled.div`
@@ -15,20 +16,19 @@ const Container = styled.div`
   justify-content: space-evenly;
 `
 
-const Content = styled.div`
-   {
-    top: 15px;
-    min-height: 80vh;
-    position: relative;
-    background-color: white;
-    border-radius: 44px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
-    align-items: center;
-  }
+const Content = styled.div`  
+  top: 15px;
+  min-height: 80vh;
+  position: relative;
+  background-color: white;
+  border-radius: 44px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.1);
+  align-items: center;
+
   &:after {
     content: '';
     position: absolute;
@@ -77,9 +77,11 @@ const Dashboard = () => {
           <Exmap courseCode='all' />
         </Overflow>
 
-        <Timer href='pomodoro'>
-          <h2>PLUGGTIMER</h2>
-        </Timer>
+        <Link to='/merit/pomodoro'>
+          <Timer>
+            <h2>PLUGGTIMER</h2>
+          </Timer>
+        </Link>
 
         <Progressbar />
 
