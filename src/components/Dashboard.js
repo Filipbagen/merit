@@ -47,19 +47,21 @@ const Timer = styled.a`
   height: 84px;
   background-color: #12293b;
   width: 300px;
-  color: white;
-  font-size: 26px;
+  margin: 25px;
   text-align: center;
   vertical-align: middle;
-  line-height: 20px;
-  text-decoration: none;
-  margin: 25px;
 `
 
 const Overflow = styled.div`
   width: 100vw;
   overflow: auto;
   display: flex;
+`
+
+const Text = styled.h2`
+  color: white;
+  line-height: 24px;
+  font-size: 36px;
 `
 
 const Dashboard = () => {
@@ -77,11 +79,11 @@ const Dashboard = () => {
           <Exmap courseCode='all' />
         </Overflow>
 
-        <Link to='/merit/pomodoro'>
-          <Timer>
-            <h2>PLUGGTIMER</h2>
-          </Timer>
-        </Link>
+        <Timer>
+          <Link to='/merit/pomodoro' style={{ textDecoration: 'none' }}>
+            <Text>PLUGGTIMER</Text>
+          </Link>
+        </Timer>
 
         <Progressbar />
 
