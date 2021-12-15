@@ -5,8 +5,8 @@ import { BsPlayCircle, BsPauseCircle } from 'react-icons/bs'
 import BackBtn from './BackBtn'
 
 const AllButts = styled.div`
-  min-height: 100vh;
-  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
   background-color: white;
   font-family: 'Barlow';
   display: flex;
@@ -82,6 +82,10 @@ const Vector = styled.div`
   }
 `
 
+const Time = styled.div`
+  margin: 0;
+`
+
 // Component
 const Pomodoro = () => {
   // var colChange = document.querySelector(".Clock");
@@ -128,16 +132,16 @@ const Pomodoro = () => {
       <Clock className='Clock'>
         {message
           ? (
-            <p>
+            <Time>
               <Text>Vila</Text>
               {timerVilaMin}:{timerVilaSec}
-            </p>
+            </Time>
             )
           : (
-            <p>
+            <Time>
               <Text>Plugga</Text>
               {timerMinutes}:{timerSeconds}
-            </p>
+            </Time>
             )}
       </Clock>
 

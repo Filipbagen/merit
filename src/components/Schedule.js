@@ -173,7 +173,7 @@ const Schedule = () => {
 
                     <TopRow>
                       <Asset>{item.Kurs}</Asset>
-                      <Asset>{item.Lokal ? item.Lokal : 'Distans'}</Asset>
+                      <Asset>{(item.Lokal || item.Undervisningstyp === 'Dugga') ? item.Lokal : 'Distans'}</Asset>
                     </TopRow>
 
                     <Teacher>
