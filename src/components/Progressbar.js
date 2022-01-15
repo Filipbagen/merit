@@ -35,8 +35,9 @@ const Progressbar = () => {
   const endDate = new Date('06/06/2025')
   const totDays = (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24)
 
-  const compleated = Math.floor((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24))
-  const percentageDiff = (compleated / totDays).toFixed(2) * 100
+  const compleated = Math.round((new Date().getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24))
+  const percentageDiff = (compleated / totDays) * 100
+  const rounded = Math.round(percentageDiff);
 
   const [value, setValue] = React.useState(0)
   React.useEffect(() => {
@@ -46,7 +47,7 @@ const Progressbar = () => {
   return (
     <div>
       <PercentNumber>
-        Klart av MT: {percentageDiff}%
+        Klart av MT: {rounded}%
       </PercentNumber>
       <Container>
         <ProgressBar style={{ width: `${value}%` }} />
