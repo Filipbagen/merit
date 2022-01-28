@@ -1,5 +1,5 @@
 import React from 'react'
-import mt2b from '../data/mt2b.json'
+import scedule from '../data/mt.json'
 import { useParams } from 'react-router'
 import styled from 'styled-components'
 import Calendar from './Calendar'
@@ -125,11 +125,20 @@ const LectureBlock = styled.div`
 const Schedule = () => {
   const { id } = useParams()
   const match = []
-  for (let i = 0; i < mt2b.length; i++) {
-    if (id === mt2b[i].Startdatum) {
-      match.push(mt2b[i])
+
+  // format date
+  let date = id.split('-')
+  if (date[1] < 10) {
+    date = date[0] + '-0' + date[1].toString() + '-' + date[2]
+  }
+
+  for (let i = 0; i < scedule.length; i++) {
+    if (date === scedule[i].Startdatum) {
+      match.push(scedule[i])
     }
   }
+
+  console.log(match)
 
   const removeZero = (number) => {
     if (number.split()[0] === 0) {
@@ -161,27 +170,27 @@ const Schedule = () => {
             )
           : (
               match.map((item) => (
-                <TimeTable key={item.Starttid}>
-                  <Time>
-                    {/* style={{ height: calculateHours(item) >= 4 && '40px' }} */}
-                    <StartTime>{item.Starttid}</StartTime>
+              <TimeTable key={item.Starttid}>
+                <Time>
+                  {/* style={{ height: calculateHours(item) >= 4 && '40px' }} */}
+                  <StartTime>{item.Starttid}</StartTime>
 
-                    <StartTime>{item.Sluttid}</StartTime>
-                  </Time>
+                  <StartTime>{item.Sluttid}</StartTime>
+                </Time>
 
-                  <LectureBlock style={{ height: calculateHours(item) >= 4 && '140px' }}>
+                <LectureBlock style={{ height: calculateHours(item) >= 4 && '140px' }}>
 
-                    <TopRow>
-                      <Asset>{item.Kurs}</Asset>
-                      <Asset>{(item.Lokal || item.Undervisningstyp === 'Dugga') ? item.Lokal : 'Distans'}</Asset>
-                    </TopRow>
+                  <TopRow>
+                    <Asset>{item.Kurs}</Asset>
+                    <Asset>{(item.Lokal || item.Undervisningstyp === 'Dugga') ? item.Lokal : 'Distans'}</Asset>
+                  </TopRow>
 
-                    <Teacher>
-                      {item.Undervisningstyp} <br /> {item.Lärare}
-                    </Teacher>
+                  <Teacher>
+                    {item.Undervisningstyp} <br /> {item.Lärare}
+                  </Teacher>
 
-                  </LectureBlock>
-                </TimeTable>
+                </LectureBlock>
+              </TimeTable>
               ))
             )}
       </Content>
